@@ -1,0 +1,163 @@
+---
+title: "Simulations de l'impôt avec quotient conjugal"
+author: "Benjamin Belrhomari"
+date: "14 octobre 2019"
+output:
+   html_document:
+    theme: NULL
+    highlight: NULL
+---
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(ggplot2)
+```
+
+# Illustration de l'effet du quotient conjugal
+
+On définit un impôt progressif par tranches, similaire à l'IR français :
+
+```{r}
+impot <- function(revenu) {
+  tranches = c(10000, 20000, 40000, 80000, Inf)
+  taux = c(0, 0.05, 0.1, 0.25, 0.5)
+  taxe = sum(diff(c(0, pmin(revenu, tranches))) * taux)
+
+  return(taxe)
+}
+```
+
+Pour une personne seule, le montant d'impôt en fonction du revenu peut être représenté de
+cette façon :
+
+```{r , echo=FALSE}
+df <- data.frame(x = 0:1000 * 100) %>% mutate(impot = Vectorize(impot)(x))
+
+(
+  ggplot(df)
+  + aes(
+    x = x,
+    y = impot
+    )
+  + geom_line()
+  + theme_minimal()
+  + labs(
+    x = "Revenu",
+    y = "Impôt"
+    )
+)
+```
+
+
+
+## Cas-type
+
+Soient deux individus, $h$ et $f$, dont les revenus sont les suivants :
+
+```{r}
+zf = 5000
+zh = 40000
+```
+
+On peut alors calculer leur impôt avec la taxation jointe :
+```{r}
+taxation_jointe = 2 * impot(0.5*zf + 0.5*zh)
+taxation_jointe
+```
+
+Et avec la taxation séparée :
+
+```{r}
+taxation_separee = impot(zf) + impot(zh)
+taxation_separee
+```
+
+L'avantage de la taxation jointe est donc :
+```{r}
+avantage = taxation_separee - taxation_jointe
+avantage
+```
+
+## Graphes
+
+On peut généraliser ce calcul, et le faire pour (par exemple) tous les revenus
+$z_f$ et $z_h$ compris entre 0 et 100000.
+
+```{r, include=FALSE}
+impot <- Vectorize(impot)
+```
+
+Limitons nous à 100 revenus possibles entre 1000€ et 100000€ soit 10000 couples
+possibles.
+
+Pour chacun de ces couples, on peut calculer :
+* le montant de leur imposition jointe
+* le montant de leur imposition séparée
+* l'avantage de l'imposition jointe par rapport à l'imposition séparée
+* l'inégalité des revenus dans le couple, calculée ici comme la part des revenus du plus riche dans le total des revenus du ménage
+
+```{r}
+n = 100
+
+df <- (
+  expand.grid(
+    zf = (1:n) * 100000 / n,
+    zh = (1:n) * 100000 / n
+    )
+  %>% mutate(
+    taxation_jointe = 2 * impot(0.5*zf + 0.5*zh),
+    taxation_separee = impot(zf) + impot(zh),
+    avantage = taxation_separee - taxation_jointe,
+    part_du_plus_riche = pmax(zh, zf)/(zh+zf)
+    )
+  )
+```
+
+On peut alors représenter l'avantage relatif (avantage / taxation séparée) en fonction
+de l'inégalité dans le couple, qui est croissante :
+
+```{r, message=FALSE, warning=FALSE}
+(
+  ggplot(df)
+  + aes(
+    x = part_du_plus_riche,
+    y = avantage / taxation_separee
+    )
+  + geom_point(
+      alpha = 0.25,
+      position = position_jitter()
+      )
+  + geom_smooth(se = F)
+  + theme_minimal()
+  + labs(
+    x = "Part du plus riche dans le revenu total",
+    y = "Avantage de la taxation jointe en % de la taxation séparée"
+  )
+)
+```
+
+Et l'avantage en fonction des deux revenus. Les couples sur la diagonale sont parfaitement
+égalitaires ($z_{f} = z_{h}$) et plus on s'éloigne de la diagonale, plus le couple est
+inégalitaire.
+
+```{r, message=FALSE, warning=FALSE}
+
+(
+  ggplot(df)
+  + aes(
+    x = zf,
+    y = zh,
+    fill = avantage,
+    z = avantage
+  )
+  + geom_raster()
+  + geom_contour(colour = "#FAEFD1")
+  + scale_fill_continuous(low = "#899DA4", high = "#C93312")
+  + theme_minimal()
+  + labs(
+    x = "Revenu de la femme",
+    y = "Revenu du mari",
+    fill = "Avantage à la taxation jointe"
+  )
+)
+```

@@ -1,0 +1,116 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+    \section{}
+
+    \section{Exercices}
+
+
+    \textbf{1.} Quel est l'effet d'allonger la durée d'indemnisation du chômage d'après Le Barbanchon, 2016 ?
+        \begin{enumerate}
+            \item Cela améliore la qualité de l'emploi retrouvé et retarde le retour à l'emploi
+            \item Cela améliore la qualité de l'emploi retrouvé et ne retarde pas le retour à l'emploi
+            \item Cela n'améliore pas la qualité de l'emploi retrouvé et retarde le retour à l'emploi
+            \item Cela n'améliore pas la qualité de l'emploi retrouvé et ne retarde pas le retour à l'emploi
+	    \end{enumerate}
+
+    \textbf{2.} (Camille Hémet, examen 2017) Pour évaluer l'effet de la durée d'indemnisation par l'assurance chômage sur le
+retour à l'emploi, Thomas Le Barbanchon exploite
+        \begin{enumerate}
+            \item le fait que la durée d'indemnisation potentielle augmente de façon
+            discontinue lorsque la durée travaillée dépasse un certain seuil
+            \item une variation exogène dans la durée potentielle d'indemnisation induite par
+            des différences de salaire
+            \item une variation exogène de la durée d'indemnisation potentielle induite par
+            une réforme de l'assurance chômage
+            \item le fait que des individus ayant des types de contrats différents (CDD, CDI,
+            saisonnier, intérimaire) n'ont pas les mêmes durées d'indemnisation
+            potentielle
+	    \end{enumerate}
+
+    \textbf{1.} Qu'est ce qu'une assurance actuariellement neutre ?
+
+    Dans les exercices précédents, nous avons étudié un individu \(i\), dont le salaire
+    est \(s_{i}\) et dont la fonction d'utilité est :
+    \[ U_{i} = c_{i} - \frac{h_{i}^{2}}{2} \]
+
+    Supposons désormais que cet individu a une probabilité \(p_{i}\) d'être au
+    chômage (auquel cas \(h_{i, \text{ chômage}} = 0\)) et une probabilité 
+    \(1 - p_{i}\) de travailler (auquel cas il choisit son offre de travail librement).
+
+    \textbf{1.} Quel est la relation entre  \(\kappa_{i}\) et \(\gamma_{i}\) ?
+
+    \textbf{2.} L'utilité espérée de l'individu dépend-elle du niveau d'assurance \(\left(\kappa_{i}, \gamma_{i} \right)\) ?
+
+    \textbf{3.} L'individu choisirait-il de souscrire à une assurance chômage non actuariellement neutre ?
+    Pourquoi ?
+
+   \textbf{B.} Assurance \textit{3 points}
+
+    \textbf{1.} Qu'est ce qu'une assurance actuariellement neutre ?
+
+    \dotfill
+
+    C'est une assurance dont la prime de risque est égale à l'espérance des paiements,
+    i.e. en moyenne le coût et le bénéfice pour l'assuré comme pour l'assurance sont nuls.
+
+    \dotfill
+
+    Dans les exercices précédents, nous avons étudié un individu \(i\), dont le salaire
+    est \(s_{i}\) et dont la fonction d'utilité est :
+    \[ U_{i} = c_{i} - \frac{h_{i}^{2}}{2} \]
+
+    Supposons désormais que cet individu a une probabilité \(p_{i}\) d'être au
+    chômage (auquel cas \(h_{i, \text{ chômage}} = 0\)) et une probabilité 
+    \(1 - p_{i}\) de travailler (auquel cas il choisit son offre de travail librement).
+
+    Supposons que cet agent puisse acheter une assurance acturiellement neutre, dont
+    le coût est \(\kappa_{i}\) lorsqu'il est employé et qui lui verse \(\gamma_{i}\) lorsqu'il est au chômage.
+
+    \textbf{1.} Quel est la relation entre  \(\kappa_{i}\) et \(\gamma_{i}\) ?
+
+    \dotfill
+
+    La prime de risque est de \(\kappa_{i}\), payée avec une probabilité \(p_{i}\). La prime de risque espérée est
+    donc de \(\kappa_{i} \times p_{i}\).
+
+    Le paiement en cas de survenue du risque est de \(\gamma_{i}\), payé avec une probabilité \(1 - p_{i}\). Le paiement espéré
+    est donc de \(\gamma_{i} \times \left(1-p_{i}\right)\).
+
+    Puisque l'assurance est actueriellement neutre, on a : \[\kappa_{i} \times p_{i} = \gamma_{i} \times \left(1-p_{i}\right) \]
+
+    C'est à dire : \[\kappa_{i} = \gamma_{i} \times \frac{1-p_{i}}{p_{i}} \]
+
+    \dotfill
+
+    \textbf{2.} L'utilité espérée de l'individu dépend-elle du niveau d'assurance \(\left(\kappa_{i}, \gamma_{i} \right)\) ?
+    
+    \dotfill
+    
+    Si l'individu ne travaille pas, on a \(c_{i} = \gamma_{i}\) et \(h_{i} = 0\). Dès lors, \(U_{i}^{c} = \gamma_{i} \) où \(U_{i}^{c}\) est l'utilité de l'individu lorsqu'il est au chômage.
+    
+    Si l'individu travaille, on a \(c_{i} = s \times h_{i} - \kappa_{i}\). L'individu maximise son utilité
+    en choisissant son nombre d'heures travaillées, et alors \(h_{i}^{*} = s\) et \(U_{i}^{t} = \frac{s^{2}}{2} - \kappa_{i} \) où \(U_{i}^{t}\) est l'utilité de l'individu lorsqu'il travaille. 
+    
+    Son utilité espérée est donc :
+    \begin{align*}
+    \left(1-p_{i}\right) \times U_{i}^{c} + p_{i} \times U_{i}^{t} &= \left(1-p_{i}\right) \gamma_{i} + p_{i} \times \left( \frac{s^{2}}{2} - \kappa_{i} \right) \\
+    &= \left(1-p_{i}\right) \gamma_{i} - p_{i} \kappa_{i} + \frac{p_{i}s^{2}}{2} \\
+    &= 0 + \frac{p_{i}s^{2}}{2} \\
+    &=  \frac{p_{i}s^{2}}{2}
+    \end{align*}
+    
+    L'utilité de l'individu ne dépend pas de son niveau d'assurance.
+    
+    \dotfill
+
+
+    \textbf{3.} L'individu choisirait-il de souscrire à une assurance chômage non actuariellement neutre ?
+    Pourquoi ?
+    
+    \dotfill
+    Non, car cela diminuerait son utilité espérée : \(\left(1-p_{i}\right) \gamma_{i} - p_{i} \kappa_{i} < 0\). L'individu est neutre face au risque, et n'est donc pas prêt à payer pour lisser sa consommation.
+    
+    \dotfill
+\end{document}

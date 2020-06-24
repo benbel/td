@@ -1,0 +1,605 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+    \section{}
+
+    \section{Exercices}
+
+    \textbf{3.} Quel est le lien entre perte sèche et taux d'imposition ?
+        \begin{enumerate}
+            \item La perte sèche augmente plus que proportionnellement au taux d'imposition
+            \item La perte sèche augmente proportionnellement au taux d'imposition
+            \item La perte sèche augmente moins que proportionnellement au taux d'imposition
+            \item La perte sèche augmente est indépendante du taux d'imposition
+	    \end{enumerate}
+
+
+    \textbf{1.} Si l'offre est parfaitement inélastique, quel serait l'incidence
+        économique d'une taxe formellement payée par les producteurs ?
+        \begin{enumerate}
+            \item Le poids de la taxe serait uniquement supporté par les consommateurs
+            \item Le poids de la taxe serait uniquement supporté par les producteurs
+            \item Le poids de la taxe serait partagé entre producteurs et consommateurs
+            \item L'information est insuffisante pour répondre
+	    \end{enumerate}
+
+    \textbf{3.} Si l'élasticité de l'offre de travail d'un individu au taux net
+        de taxe est de 0.5 et que ce taux net de taxe passe de 50\% à 75\% \ldots
+        \begin{enumerate}
+            \item L'offre de travail va augmenter de 25 \% 
+            \item L'offre de travail va augmenter de 12.5 \%
+            \item L'offre de travail va augmenter de 50 \%
+            \item L'information est insuffisante pour répondre
+	    \end{enumerate}
+    \textbf{5.} Si le marché du travail était en concurrence pure et parfaite, les cotisations
+        sociales salariales et patronales :
+        \begin{enumerate}
+            \item Auraient la même incidence économique et la même incidence statutaire
+            \item Auraient la même incidence économique et une incidence statutaire différente
+            \item Auraient une incidence économique différente et la même incidence statutaire
+            \item Auraient une incidence économique différente et lune incidence statutaire différente
+	    \end{enumerate}
+
+
+    \textbf{C.} Microsimulation \textit{4 points}
+
+    Les questions suivantes portent sur le jeux de données \texttt{fisc.csv}
+    joint aux exercices.
+
+    Vous pouvez répondre aux questions suivantes avec un logiciel de type Excel
+    ou autre.
+
+    Le jeux données comporte des informations sur mille ménages (que l'on
+    suppose constitués d'un homme, d'une femme et d'enfants par simplicité),
+    numérotés de 1 à 1000, dont observe trois caractéristiques :
+    \begin{itemize}
+        \item le revenu du mari, \(z_{h}\)
+        \item le revenu de la femme, \(z_{f}\)
+        \item le nombre d'enfants, \(n_{e}\)
+    \end{itemize}
+
+    On étudie le système socio-fiscal suivant :
+    \begin{itemize}
+        \item l'impôt sur le revenu est un impôt par tranches :
+            \begin{itemize}
+                \item le taux marginal d'imposition est de 0\% entre 0 et 14 999
+                    euros
+                \item le taux marginal d'imposition est de 25\% entre 15 000 et
+                    29 999 euros
+                \item le taux marginal d'imposition est de 40\% au delà de 30
+                    000 euros
+            \end{itemize}
+        \item le calcul de l'impôt se fait sur le quotient familial. Pour un
+            ménage comptant \(n\) parts, le montant d'impôt dû est de \(n \times
+            T\left(\frac{z_{h}+z_{f}}{n}\right)\)
+        \item chaque individu du ménage (homme, femme ou enfant) constitue une
+            part fiscale
+    \end{itemize}
+
+    \textbf{1.} Quel est le revenu brut médian dans cet échantillon ? Quel est le
+    revenu brut moyen ?
+
+    \textbf{2.} Calculez pour chacun des ménages le montant de leur impôt.
+    Quel est le revenu net médian ? Quel est le revenu moyen médian ?
+    Quel est le taux d'imposition effectif moyen ?
+
+    \textbf{3.} Représentez le taux d'imposition moyen en fonction du revenu du
+    ménage.
+
+    On s'intéresse à la réforme fiscale suivante :
+    \begin{itemize}
+        \item chaque ménage reçoit une aide (non taxée) de 1000 euros par enfant
+        \item le taux marginal de la dernière tranche passe de 30\% à 31\%
+    \end{itemize}
+
+    \textbf{4.} Quel est le coût pour les finances publiques de cette aide ?
+    Quel est le gain pour les finances publiques de l'augmentation du taux marginal de la dernière tranche ?
+
+    \textbf{5.} Cette réforme réduit-elle les inégalités ?
+
+    Les questions suivantes portent sur le jeux de données \texttt{fisc.csv}
+    joint aux exercices.
+
+    Vous pouvez répondre aux questions suivantes avec un logiciel de type Excel
+    ou autre.
+
+    Le jeux données comporte des informations sur mille ménages (que l'on
+    suppose constitués d'un homme, d'une femme et d'enfants par simplicité),
+    numérotés de 1 à 1000, dont observe trois caractéristiques :
+    \begin{itemize}
+        \item le revenu du mari, \(z_{h}\)
+        \item le revenu de la femme, \(z_{f}\)
+        \item le nombre d'enfants, \(n_{e}\)
+    \end{itemize}
+
+    On étudie le système socio-fiscal suivant :
+    \begin{itemize}
+        \item l'impôt sur le revenu est un impôt par tranches :
+            \begin{itemize}
+                \item le taux marginal d'imposition est de 0\% entre 0 et 14 999
+                    euros
+                \item le taux marginal d'imposition est de 25\% entre 15 000 et
+                    29 999 euros
+                \item le taux marginal d'imposition est de 40\% au delà de 30
+                    000 euros
+            \end{itemize}
+        \item le calcul de l'impôt se fait sur le quotient familial. Pour un
+            ménage comptant \(n\) parts, le montant d'impôt dû est de \(n \times
+            T\left(\frac{z_{h}+z_{f}}{n}\right)\)
+        \item chaque individu du ménage (homme, femme ou enfant) constitue une
+            part fiscale
+    \end{itemize}
+
+    \textbf{1.} Quel est le revenu brut médian dans cet échantillon ? Quel est le
+    revenu brut moyen ?
+
+    \dotfill
+
+    Le revenu brut moyen est de 27203 euros et le revenu brut médian est de 21018 euros.
+
+    \dotfill
+
+    \textbf{2.} Calculez pour chacun des ménages le montant de leur impôt.
+    Quel est le revenu net médian ? Quel est le revenu moyen médian ?
+    Quel est le taux d'imposition effectif moyen ?
+
+    \dotfill
+
+    Le revenu net moyen est de 26216 euros et le revenu net médian est de 21018 euros.
+
+    Si l'on calcule la somme des impôt payés (987257.4 euros) et la somme des revenus (27202977 euros),
+    on obtient un taux moyen de 3.63\%.
+
+    \dotfill
+
+    \textbf{3.} Représentez le taux d'imposition moyen en fonction du revenu du
+    ménage.
+
+    \dotfill
+
+    \begin{figure}[p]
+        \centering
+        \includegraphics[width=16cm]{taux_revenu}
+        \caption{Taux effectif d'imposition en fonction du revenu du ménage}
+    \end{figure}
+
+    \dotfill
+
+    On s'intéresse à la réforme fiscale suivante :
+    \begin{itemize}
+        \item chaque ménage reçoit une aide (non taxée) de 1000 euros par enfant
+        \item le taux marginal de la dernière tranche passe de 30\% à 31\%
+    \end{itemize}
+
+    \textbf{4.} Quel est le coût pour les finances publiques de cette aide ?
+    Quel est le gain pour les finances publiques de l'augmentation du taux marginal de la dernière tranche ?
+
+    \dotfill
+
+    Il y a 1 987 enfants dans la population, le coût de l'aide est donc de 1 987 000 euros.
+
+    Le montant d'impôt collecté avant réforme est de 987257.4 euros ; après réforme il est de 
+    1 072 055 euros : celle-ci rapporte donc 84797.6 euros.
+
+    \dotfill
+
+    \textbf{5.} Cette réforme réduit-elle les inégalités ?
+
+    \dotfill
+
+    Oui, il est d'ailleurs possible de le montrer sans calcul :
+    \begin{itemize}
+        \item Le nombre d'enfants est indépendant du revenu : l'aide n'a donc aucun effet redistributif vertical en moyenne
+        \item L'augmentation du taux de la dernière tranche réduit le revenu des plus riches sans modifier celui-des autres, et réduit
+              donc l'écart entre les plus riches et les plus pauvres.
+    \end{itemize}
+
+    Parmi les indicateurs d'inégalités, usuellement utilisés, on peut mentionner :
+    \begin{itemize}
+        \item Le rapport interdécile \textsc{d}9 / \textsc{d}1, c'est à dire le rapport du revenu du neuvième décile sur celui du premier décile.
+        \item Le coefficient de Gini
+        \item La part des différents quantiles dans le total des revenus
+    \end{itemize}
+
+    \section*{Séance 3}
+
+    \textbf{A.} \textit{5 points}
+
+    On étudie le comportement d'un individu \(i\), dont l'utilité dépend de
+    sa consommation \( C_{i} \) et du nombre d'heures travaillées \( h_{i} \) :
+
+    \[ U\left(C_{i}, h_{i} \right) = C_{i} - \frac{h_{i}^{2}}{2} \]
+
+    Chaque heure travaillée est rémunérée à un salaire horaire \( s_{i} \).
+    Le revenu total de l'individu est taxé à un taux \(\tau\).
+
+    \textbf{1.} Exprimez la contrainte de budget de l'individu en fonction de
+    \( s_{i}, h_{i}, \tau \) et \(C_{i}\).
+
+    \textbf{2.} Supposez que l'individu maximise son utilité. Quel nombre d'heures
+    \( h_{i}^{*} \) choisit-il de travailler, en fonction de \(s_{i}\) et \(\tau\)
+    ? Quel est alors son revenu avant impôt ? Quel est son revenu après impôt ?
+
+    \textbf{3.} Rappelez la définition d'une élasticité. Quelle est l'élasticité de
+    l'offre de travail de l'agent (c'est à dire \( h_{i}^{*} \)) par rapport à son
+    taux net de taxe (c'est à dire \( 1 - \tau\)) ?
+
+    \textbf{4.} Rappelez ce que représente la courbe de Laffer. Pourquoi son maximum
+    n'est-il pas atteint quand \( \tau = 1 \) ?
+
+    \textbf{5.} La taxation présentée dans cet exercice est-elle progressive ?
+
+
+    \textbf{B.} \textit{3 points}
+
+    L'impôt sur le revenu est en France payé par les ménages fiscaux ; une
+    alternative possible serait que les deux adultes du ménage payent séparement
+    l'impôt sur leur revenu.
+
+    En notant \( T\left(z\right) \) les impôts payés pour un revenu \( z \) :
+    \begin{itemize}
+        \item Dans le premier cas, on applique le barème de l'impôt sur le revenu
+              sur la somme des revenus du ménage divisée par le nombre de parts
+              fiscales, et l'on multiplie le résultat par le nombre de parts fiscales.
+              Autrement dit, l'impôt payé est, pour un couple :
+              \[ T\left(\frac{z_{h} + z_{f}}{2}\right) \times 2 \]
+
+        \item Dans le second cas, on applique le barème de l'impôt sur le revenu
+              à chacun des membres du ménage.
+              Autrement dit, l'impôt payé est, pour un couple :
+              \[ T\left(z_{h}\right) + T\left(z_{f}\right) \]
+    \end{itemize}
+
+    \textbf{1.} Sachant que l'impôt sur le revenu est progressif, expliquez pourquoi
+        la taxation du ménage (premier cas) plutôt que des individus (deuxième cas)
+        avantage les couples dont les revenus sont inégalitaires.
+
+    Supposez que, comme dans la majorité des cas, le revenu \( z_{f} \) de la femme soit
+    inférieur au revenu \( z_{h} \) du mari.
+
+    \textbf{2.} Quel est le taux marginal d'imposition du revenu des
+    femmes dans le premier et dans le second cas ?
+    Comment l'offre de travail des femmes est-elle affectée ?
+
+
+    Les questions suivantes portent sur l'article \og Are housing benefit an
+    effective way to redistribute income? Evidence from a natural experiment
+    in France \fg{}, de Gabrielle Fack, paru dans Labour Economics en 2006.
+
+    \textbf{1.} Rappelez ce que sont l'incidence statutaire et l'incidence
+    économique d'une taxe ou d'un transfert. Pourquoi diffèrent-elles ?
+
+    \textbf{2.} Comment l'autrice mesure-t'elle l'incidence des \textsc{apl} ?
+    Quelle variation exploite-t'elle ? Quels sont les groupes de contrôle et
+    de traitement ? La méthode employée vous paraît-t'elle pertinente ?
+
+    \textbf{3.} Quelle est l'incidence estimée ? Qu'en concluez-vous sur
+    l'efficacité des \textsc{apl} pour réduire le montant du loyer des
+    bénéficiaires ?
+
+
+    \section*{Séance 3}
+
+    \textbf{A.} \textit{5 points}
+
+    On étudie le comportement d'un individu \(i\), dont l'utilité dépend de
+    sa consommation \( C_{i} \) et du nombre d'heures travaillées \( h_{i} \) :
+
+    \[ U\left(C_{i}, h_{i} \right) = C_{i} - \frac{h_{i}^{2}}{2} \]
+
+    Chaque heure travaillée est rémunérée à un salaire horaire \( s_{i} \).
+    Le revenu total de l'individu est taxé à un taux \(\tau\).
+
+    \textbf{1.} Exprimez la contrainte de budget de l'individu en fonction de
+    \( s_{i}, h_{i}, \tau \) et \(C_{i}\).
+
+    \textbf{2.} Supposez que l'individu maximise son utilité. Quel nombre d'heures
+    \( h_{i}^{*} \) choisit-il de travailler, en fonction de \(s_{i}\) et \(\tau\)
+    ? Quel est alors son revenu avant impôt ? Quel est son revenu après impôt ?
+
+    \textbf{3.} Rappelez la définition d'une élasticité. Quelle est l'élasticité de
+    l'offre de travail de l'agent (c'est à dire \( h_{i}^{*} \)) par rapport à son
+    taux net de taxe (c'est à dire \( 1 - \tau\)) ?
+
+    \textbf{4.} Rappelez ce que représente la courbe de Laffer. Pourquoi son maximum
+    n'est-il pas atteint quand \( \tau = 1 \) ?
+
+    \textbf{5.} La taxation présentée dans cet exercice est-elle progressive ?
+
+    \dotfill
+
+    La contrainte de budget est :
+    \[ \left( 1 - \tau \right) hs = C\]
+
+    On peut alors substituer cette expression dans la fonction d'utilité :
+    \[ U =  \left( 1 - \tau \right) hs - \frac{h^{2}}{2} \]
+
+    Le maximum est atteint lorsque la dérivée de \(U\) par rapport aux variables
+    de choix est nulle :
+    \[ \frac{dU}{dh} = \left( 1 - \tau \right) s - h \]
+
+    On en déduit que \(h^{*} = \left(1 - \tau \right) s\).
+
+    Le revenu brut (\og avant\fg{} impôt) est de \(h^{*}s = \left( 1 -
+    \tau\right) s \times s = \left( 1 - \tau \right) s^{2} \) et le revenu net
+    (\og après \fg{} impôt) est de \(\left(1 - \tau\right) h^{*}s = \left(1 -
+    \tau\right)^{2} s^{2}\).
+
+    L'élasticité est la variation relative (en pourcentage) d'une variable par
+    rapport à la variation relative d'une autre variable. Autrement dit
+    l'élasticité \(\epsilon\) de \(Y\) par rapport à \(X\) est telle que si
+    \(X\) augmente de \(1 \%\), \(Y\) varie de \(\epsilon \%\).
+
+    L'élasticité de l'offre de travail par rapport au taux net de taxe est :
+    \begin{align*}
+        \epsilon &= \frac{1 - \tau}{h^{*}} \frac{\partial h^{*}}{\partial 1 -
+        \tau} \\
+                 &= \frac{1 - \tau}{\left( 1 - \tau \right) s} \frac{\partial
+                 \left(1 - \tau\right) s}{\partial 1 - \tau} \\
+                 &= \frac{1}{s} s \\
+                 &= 1
+    \end{align*}
+
+    Lorsque le taux net de taxe augmente d'1\% (par exemple, si il passe de 0.6
+    à 0.606), le nombre d'heures travaillées augmenterait de 1\% également.
+
+    L'impôt collecté est de \( \tau \times R = \tau \times \left(1 - \tau\right)
+    s^{2} \).
+
+    Le taux d'imposition a deux effets de sens opposé sur le montant de l'impôt
+    collecté :
+    \begin{itemize}
+        \item Il augmente la part (\(\tau\)) de l'assiette (c'est à dire \(\left( 1 - \tau \right) s^{2}\)) qui est collectée
+        \item Il réduit la taille de l'assiette (c'est à dire de \(\left( 1 - \tau \right) s^{2}\))
+              et donc, à taux égal, le montant collecté
+    \end{itemize}
+
+    Généralement, le premier effet domine lorsque \(\tau\) est faible et le
+    second domine lorsque \(\tau\) est élevé.
+
+    Si l'on représente le montant d'impôt collecté en fonction du taux
+    d'imposition, graphique que l'on nomme \og courbe de Laffer \fg{}, la courbe
+    est d'abord croissante, puis décroissante.
+
+    Dans notre cas, le taux maximal est atteint pour \(\tau = 0.5\) (vous pouvez
+    faire le calcul en dérivant le montant collecté par rapport à \(\tau\) pour
+    trouver le \(\tau\) qui maximise le montant d'impôt collecté).
+
+    L'impôt ici étudié est proportionnel au revenu, et donc ni régressif, ni
+    progressif.
+
+    \dotfill
+
+    \textbf{B.} \textit{3 points}
+
+    L'impôt sur le revenu est en France payé par les ménages fiscaux ; une
+    alternative possible serait que les deux adultes du ménage payent séparement
+    l'impôt sur leur revenu.
+
+    En notant \( T\left(z\right) \) les impôts payés pour un revenu \( z \) :
+    \begin{itemize}
+        \item Dans le premier cas, on applique le barème de l'impôt sur le revenu
+              sur la somme des revenus du ménage divisée par le nombre de parts
+              fiscales, et l'on multiplie le résultat par le nombre de parts fiscales.
+              Autrement dit, l'impôt payé est, pour un couple :
+              \[ T\left(\frac{z_{h} + z_{f}}{2}\right) \times 2 \]
+
+        \item Dans le second cas, on applique le barème de l'impôt sur le revenu
+              à chacun des membres du ménage.
+              Autrement dit, l'impôt payé est, pour un couple :
+              \[ T\left(z_{h}\right) + T\left(z_{f}\right) \]
+    \end{itemize}
+
+    \textbf{1.} Sachant que l'impôt sur le revenu est progressif, expliquez pourquoi
+        la taxation du ménage (premier cas) plutôt que des individus (deuxième cas)
+        avantage les couples dont les revenus sont inégalitaires.
+
+    Supposez que, comme dans la majorité des cas, le revenu \( z_{f} \) de la femme soit
+    inférieur au revenu \( z_{h} \) du mari.
+
+    \textbf{2.} Quel est le taux marginal d'imposition du revenu des
+    femmes dans le premier et dans le second cas ?
+    Comment l'offre de travail des femmes est-elle affectée ?
+
+    \dotfill
+
+    L'intuition est la suivante.
+
+    L'imposition commune conduit à imposer les deux
+    membres du foyer à un même taux intermédiaire entre les taux individuels.
+
+    L'impôt étant progressif, le taux d'imposition moyen de l'individu
+    le moins bien rémunéré est inférieur au taux intermédiaire, lui-même
+    inférieur au taux moyen de l'individu le mieux rémunéré.
+
+    Pour l'individu le moins bien rémunéré, cela aboutit à une hausse
+    de son taux moyen et donc de l'impôt payé. Pour l'individu le mieux payé,
+    cela aboutit à une baisse de son taux moyen et donc de l'impôt payé.
+
+    Le second effet domine le premier car la part des revenus de l'individu le
+    mieux payé est par définition la plus importante.
+
+    Autrement dit, passer à l'imposition commune augmente les impôts sur une
+    faible part des revenus (ceux de la personne la moins bien rémunérée) et les
+    diminue sur une grande part des revenus (ceux de la personne la mieux
+    rémunérée).
+
+    Pour s'en convaincre, étudions le cas suivant :
+    \begin{itemize}
+        \item Un couple égalitaire où \(z_{h} = z_{f} = 20 000\)
+        \item Un couple inégalitaire où \( z_{h} = 40 000\) et \(z_{f} = 0\)
+        \item Un système d'impôt simple où \(T\left(z\right) =
+            \left(\frac{z}{1000}\right)^{2}\)
+    \end{itemize}
+
+    Pour le couple égalitaire, il paye \(T\left(20 000\right) +
+    T\left(20000\right) = 400 + 400 = 800\) euros d'impôt avec l'imposition
+    séparée et \(2 \times T\left( \frac{20000 + 20000}{2}\right) = 2 \times
+    T\left(20000\right) = 2 \times 400 = 800\) euros avec l'imposition
+    jointe.
+
+    Pour le couple inégalitaire, la femme paye \(T\left(0\right) = 0\) euros d'impôt
+    (soit un taux moyen de \(0\)) et le mari paye \(T\left(40000\right) = 1600\)
+    euros d'impôt (soit un taux moyen de 0.04).
+
+    Dans le cas de l'imposition jointe, le foyer paye un impôt de \(2 \times
+    T\left( \frac{0 + 40000}{2}\right) = 2 \times T\left( 20000\right) = 2
+    \times 400 = 800\) euros d'impôt, soit un taux moyen de 0.02.
+
+    L'imposition a deux conséquences :
+    \begin{itemize}
+        \item Le revenu de la femme est taxé à hauteur de 0.02 au lieu de l'être
+            avec un taux de 0, ce qui n'a pas d'effet puisque \(z_{f} = 0\)
+        \item Le revenu du mari est taxé à hauteur de 0.02 au lieu de l'être
+            avec un taux de 0.04, ce qui divise par deux le montant d'impôt
+            payé.
+    \end{itemize}
+
+    Pour des simulations sur des données représentatives et l'\textsc{ir}
+    français, cf.\ ce papier :
+
+    \url{https://www.ofce.sciences-po.fr/pdf/dtravail/OFCEWP2019-05.pdf}
+
+    Dans le cas de l'imposition séparée, le taux marginal d'imposition du revenu
+    des femmes est de \(T'\left(z_{f}\right)\) et dans le cas de l'imposition
+    jointe, il est de \(T'\left(\frac{z_{f} + z_{h}}{2}\right)\). Comme
+    \(z_{f} < z_{h}\), \( z_{f} < \frac{z_{f}+z_{h}}{2}\). Ainsi,
+    \(T'\left(z_{f}\right) < T'\left(\frac{z_{f} + z_{h}}{2}\right)\).
+
+    Reprenons le cas de notre couple inégalitaire. Supposons que la femme
+    commence à travailler de telle sorte que son revenu ne soit plus \(0\) mais
+    \(10000\).
+
+    L'impôt payé par le couple avec une imposition jointe est alors de
+    \(T\left(10000\right) + T\left(40000\right) = 100 + 1600 = 1700\). Pour une
+    augmentation de revenu de \(10000\) euros, l'impôt a augmenté de \(100\)
+    euros soit 1\% du nouveau revenu.
+
+    Dans le cas de l'imposition jointe, le nouvel impôt est alors de
+    \(2 \times T\left(\frac{10000 + 40000}{2}\right) = 2 \times T\left(
+    25000\right) = 2 \times 625 = 1250\) euros, soit une augmentation de 450
+    euros ou 4,5\% du nouveau revenu.
+
+    Si l'offre de travail des femmes a une élasticité négative par rapport au
+    taux marginal d'imposition, elles travailleront moins avec l'imposition
+    jointe qu'avec l'imposition séparée, toutes choses égales par ailleurs.
+
+    \dotfill
+
+
+    Les questions suivantes portent sur l'article \og Are housing benefit an
+    effective way to redistribute income? Evidence from a natural experiment
+    in France \fg{}, de Gabrielle Fack, paru dans Labour Economics en 2006.
+
+    \textbf{1.} Rappelez ce que sont l'incidence statutaire et l'incidence
+    économique d'une taxe ou d'un transfert. Pourquoi diffèrent-elles ?
+
+    \dotfill
+
+    L'incidence statutaire correspond au montant effectivement versé à
+    l'institution chargée de collecter les prélèvements obligatoires. On la
+    distingue de l'incidence économique qui est le coût effectivement payé par
+    les agents, c'est à dire la somme du montant versé par l'agent versé à
+    l'administration fiscale et de l'écart de prix causé par la taxe. C'est
+    parce que la mise en place d'une taxe modifie le prix d'équilibre que les
+    deux ne concordent pas.
+
+    À mon sens, il est utile de distinguer trois incidences :
+    \begin{itemize}
+        \item l'incidence légale ou statutaire : qui paye la taxe d'après la loi ?
+        \item l'incidence comptable : qui verse effectivement une somme d'argent
+            à l'administration fiscale ?
+        \item l'incidence économique ou fiscale
+    \end{itemize}
+
+    La définition \og traditionnelle \fg{} ne distingue pas entre ce que je
+    nomme incidence statutaire et incidence comptable.
+
+    Pour prendre l'exemple de l'impôt sur le revenu, la mise en place du
+    prélèvement à la source constitue un changement d'incidence comptable, des
+    particuliers vers les entreprises, sans changement ni d'incidence légale, ni
+    d'incidence économique (a priori).
+
+    L'incidence comptable est importante au moins pour les raisons suivantes :
+    \begin{itemize}
+        \item les capacités de l'administration fiscale de collecter l'impôt et
+            de contrôler la fraude dépendent de l'incidence comptable. Par
+            exemple, il serait sans doute très coûteux de collecter les taxes
+            sur la consommation auprès des consommateurs plutôt qu'auprès des
+            entreprises.
+        \item L'agent payant l'impôt au sens comptable n'a pas nécessairement
+            les mêmes incitations que l'agent payant l'impôt au sens statutaire
+            ou au sens économique. Dans le cas du prélèvement à la source,
+            lorsque l'employeur déclare les revenus de son employé à
+            l'administration fiscale, il n'a aucun intérêt à frauder ; ce qui
+            n'est évidemment pas le cas du contribuable qui déclare ses revenus
+            et qui a tout intérêt à les minorer. C'est le cas aussi de la
+            taxation des revenus du capital, qui peut se faire au niveau des
+            entreprises ou des actionnaires. Dans le cas des \textsc{apl},
+            le fait que les bailleurs puissent, dans certains cas, directement
+            toucher les \textsc{apl} (et de réduire le loyer d'autant) leur permet
+            d'observer directement leur montant et d'ajuster le loyer en
+            fonction de cela, ce qui est plus difficile si il n'observe pas
+            directement le montant des \textsc{apl}.
+        \item Les individus ont une connaissance imparfaite du système
+            socio-fiscal. Le fait de payer au sens comptable un impôt le rend
+            directement visible. C'est probablement pour cela que le débat public
+            accorde une importance bien plus grande à l'impôt sur le revenu
+            (jusqu'à présent payé au sens comptable par les contribuables) quà
+            la \textsc{csg} (payée au sens comptable par les employeurs et
+            institutions financières) alors que la seconde est une taxe sur les
+            revenus plus importante en volume que le premier.
+    \end{itemize}
+
+    \dotfill
+
+    \textbf{2.} Comment l'autrice mesure-t'elle l'incidence des \textsc{apl} ?
+    Quelle variation exploite-t'elle ? Quels sont les groupes de contrôle et
+    de traitement ? La méthode employée vous paraît-t'elle pertinente ?
+
+    \dotfill
+
+    L'incidence est calculée à partir de la variation des loyers (= prix) causée
+    par les \textsc{Apl}.
+
+    Pour cela, l'autrice exploite une extension de l'égibilité des ménages aux
+    aides au début des années 1990.
+
+    Le premier quartile de la distribution des revenus (le quart le plus pauvre
+    de la population) compte la majeure partie de ces ménages nouvellement
+    éligibles. Il est donc très peu traité avant la réforme et traité après la
+    réforme. Ce groupe est le groupe de traitement.
+
+    Le second quartile de la distribution des revenus est déjà en partie traité
+    et son niveau de traitement ne varie pas après la réforme. Il s'agit du
+    groupe de contrôle.
+
+    En supposant que les loyers payés par les individus de ces deux groupes
+    auraient évolué de manière parallèle en l'absence de la réforme, l'autrice
+    utilise la méthode de la différence de différences pour mesurer l'effet
+    causal de l'extension de l'égibilité des aides au logement sur le niveau des
+    loyers.
+
+    \dotfill
+
+    \textbf{3.} Quelle est l'incidence estimée ? Qu'en concluez-vous sur
+    l'efficacité des \textsc{apl} pour réduire le montant du loyer des
+    bénéficiaires ?
+
+    \dotfill
+
+    Un euro d'\textsc{apl} supplémentaire cause une hausse de loyer de 78
+    centimes.
+
+    Les \textsc{apl} permettent donc d'augmenter le revenu disponible des
+    personnes éligibles de 22 centimes par euro d'\textsc{apl}.
+
+    Il est cependant probable que d'autres interventions de l'État puisse avoir
+    un meilleur rendement (euro de pouvoir d'achat pour les personnes ciblées /
+    euro de dépense publique) plus élevé que les aides au logement.
+
+    \dotfill
+
+
+\end{document}
