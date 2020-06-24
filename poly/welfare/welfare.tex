@@ -1,0 +1,65 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+    \section{}
+
+    \section{Exercices}
+
+	\subsection{} Si pour deux agents, A et B, et deux biens, j et k, la fonction
+    d'utilité est $u_a=u_b=j*k$ et l'allocation initiale est $ e_a=(5,3)$ et $e_b=(5,7)$,
+    quelle allocation est améliorante au sens de Pareto ?
+		\begin{enumerate}
+		\item $e_a = (5,8)$ et $e_b = (5,2)$
+		\item $e_a = (6,6)$ et $e_b = (4,4)$
+		\item $e_a = (6,5)$ et $e_b = (4,5)$
+		\item $e_a = (4,4)$ et $e_b = (6,6)$
+		\end{enumerate}
+
+    \subsection{} On réprésente les préférences d'un individu par la fonction d'utilité
+        \(U\left(x,y\right) = x^{2} + y^{2}\). Quel est le taux marginal de substitution
+        du bien $x$ en termes du bien $y$ pour cet agent ? On raisonne ici en valeur absolue,
+        c'est-à-dire avec un TMS positif.
+		\begin{enumerate}
+		\item $\frac{x}{y}$
+		\item $2 \frac{x}{y}$
+		\item $y$
+		\item $2x$
+		\end{enumerate}
+
+    \subsection{} Laquelle des propositions suivantes énonce le premier théorème du bien-être ?
+	    \begin{enumerate}
+	    \item Toute allocation Pareto optimale est efficace.
+	    \item Toute allocation d'équilibre concurrentiel est un optimum de Pareto.
+	    \item Toute allocation d'équilibre concurrentiel peut être rendue équitable
+              après avoir réalisé les transferts adéquats.
+	    \item Toute allocation Pareto optimale peut être obtenue comme équilibre
+        concurrentiel après réallocation adéquate des dotations initiales.
+	    \end{enumerate}
+
+    \section{Correction}
+
+    \subsection{} Pour qu'une allocation soit améliorante au sens de Pareto, il faut (par
+    définition de ce qu'est une amélioration au sens de Pareto) que l'utilité
+    des deux agents soit au moins aussi élevée que dans l'allocation initiale
+    (personne n'est lésés) et que l'utilité d'au moins un des deux agents soit
+    plus élevée.
+
+    Dans l'allocation initiale, \(u_a = 5 * 3 = 15\) et \(u_b = 5*7 = 35\)
+
+    Autrement, on cherche une allocation telle que :
+    \begin{itemize}
+        \item \(u_a = 15\) et \(u_b > 35\),
+        \item ou \(u_a > 15\) et \(u_b = 35\)
+        \item ou \(u_a > 15\) et \(u_b > 35\)
+    \end{itemize}
+
+    L'allocation \(4\) est Pareto améliorante, puisque \(u_a = 16 > 15\) et
+    \(u_b = 36 > 35\).
+
+    \subsection{}
+        \[TMS_{x,y} = \frac{\frac{\partial U}{\partial x}}{\frac{\partial U
+        }{\partial y}} = \frac{2x}{2y} = \frac{x}{y} \]
+
+
+\end{document}

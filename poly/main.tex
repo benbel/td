@@ -1,4 +1,4 @@
-\documentclass[11pt, a4paper]{article}
+\documentclass[11pt, a4paper]{report}
 
 \usepackage[french]{babel}
 
@@ -10,6 +10,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
+\usepackage{eurosym}
 
 \usepackage{graphicx}
 
@@ -39,7 +40,7 @@
 
     \maketitle
 
-    \section{Introduction}
+    \section*{Introduction}
 
     Ce document rassemble une partie du matériel utilisé pour les travaux dirigés
     des cours d'économie publique des professeurs Hémet (2018) et Rojas (2019).
@@ -59,27 +60,33 @@
         \item \dots
     \end{itemize}
 
-    \section{Rappels de microéconomie}
+    \chapter{Rappels de microéconomie}
 
         \subfile{./micro/microeconomie.tex}
 
-    \section{Économie du bien-être}
+    \chapter{Économie du bien-être}
 
-    \section{Taxation}
+        \subfile{./welfare/welfare.tex}
 
-    \section{Biens publics \& externalités}
+    \chapter{Taxation}
 
-    \section{Asymétries d'information \& assurances sociales}
+    \chapter{Biens publics \& externalités}
 
-    \section{Compétition et régulation des marchés}
+    \chapter{Asymétries d'information \& assurances sociales}
 
-    \section{Annexe}
+    \chapter{Compétition et régulation des marchés}
 
-        \subsection{Économie politique}
+    \chapter{Annexe}
 
-        \subsection{Économie comportementale}
+        \section{Économétrie}
 
-        \subsection{Faits stylisés}
+            \subfile{./econometrie/econometrie.tex}
+
+        \section{Économie politique}
+
+        \section{Économie comportementale}
+
+        \section{Faits stylisés}
 
 \end{document}
 
