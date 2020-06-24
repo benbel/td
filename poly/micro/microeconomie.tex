@@ -1,0 +1,322 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+    \subsection{}
+
+    \subsection{Exercices}
+
+    On étudie une population de \(N\) individus identiques, dont l'utilité
+    dépend de leur temps de travail \(T\) et de leur consommation \(C\) :
+    \[ U\left(C,T\right) = C - \frac{1}{2} T^{2} \]
+
+    On suppose que le prix du bien de consommation est de 1, et
+    qu'une unité de travail est rémunérée par un salaire \(s\).
+
+    On suppose que chaque individu maximise son utilité.
+
+    \textbf{1.} Quel est le niveau de consommation choisi par chaque individu ?
+    Quelle est leur offre de travail ? Quelle est alors l'offre de travail totale ?
+
+
+    Soient \(M\) entreprises identiques qui produisent un bien \(y\) dont le
+    prix est \(p_{y} = 1\) à l'aide de travail, dont le coût unitaire est \(s\).
+    La fonction de production de l'entreprise est :
+    \[ y = f\left(T\right) = T - \frac{1}{2}T^{2} \]
+
+    On suppose que l'entreprise maximise son profit.
+
+    On suppose que le marché est en concurrence pure et parfaite.
+
+    \textbf{2.} Quelle est la quantité de travail demandée par les entreprises
+    pour maximiser leur profit ?
+
+    \textbf{3.} Représentez graphiquement les courbes d'offre et de demande de
+    travail.
+
+    \textbf{4.} Quel est le salaire d'équilibre \(s^{*}\) et la quantité de
+    travail d'équilibre \(q^{*}\) sur le marché du travail ?
+
+    \textbf{5.} Comment le salaire d'équilibre évolue-t-il avec le nombre \(N\)
+    d'individus et avec le nombre \(M\) d'entreprises ? Expliquez l'intuition du
+    résultat.
+
+    Le Gouvernement introduit un salaire minimum \(s_{min}\).
+
+    \textbf{6.} À l'aide de votre graphique, déterminez l'effet de cette
+    mesure sur le marché du travail.
+    Distinguez le cas où \(s_{min}\) est inférieur au salaire
+    d'équilibre sans salaire minimum et le cas où \(s_{min}\) est supérieur
+    au salaire d'équilibre sans salaire minimum.
+
+    On ne suppose plus que le marché est en concurrence pure et parfaite ; on
+    considère le cas d'un monopsone sur le marché du travail, avec une seule
+    entreprise dont la fonction de production est \(y = g\left(T\right) =
+    M\left(T - \frac{1}{2}T^{2}\right)\).
+
+    \textbf{7.} Si l'entreprise veut acheter \(T^{m}\) unités de travail, quel
+    salaire \(s^{m}\) doit-elle payer pour que les individus offrent cette
+    quantité de travail ?
+
+    \textbf{8.} Déduisez-en le profit de l'entreprise en fonction de
+    \(T^{m}\). Quelle est la quantité de travail \(T^{m*}\) demandée par
+    l'entreprise qui maximise son profit ? Quelle est la valeur de \(s^{m*}\) ?
+
+    \textbf{9.} Comparez \(s^{m*}\) à \(s^{*}\). Lequel est le plus élevé et
+    pourquoi ?
+
+    \textbf{10.} Quel serait l'effet d'introduire un salaire minimum compris
+    entre \(s^{*}\) et \(s^{m*}\) sur la quantité de travail échangée à
+    l'équilibre ?
+
+    Les questions suivantes portent sur l'article \og Minimum Wages and
+    Employment: A Case Study of the Fast-Food Industry in New Jersey and
+    Pennsylvania \fg{}, de David Card et Alan Krueger, paru dans l'American
+    Economic Review en 1994.
+
+    \textbf{11.} De quelle politique publique les auteurs souhaitent-ils mesurer
+    les effets ? Quels en sont les effets attendus ?
+
+    \textbf{12.} Expliquez en quoi consiste la méthode des \og différences de
+    différences \fg{} utilisée par les auteurs. Sur quelles hypothèses
+    repose-t-elle ? Sont-elles vérifiées ?
+
+    \textbf{13.} Que concluent les auteurs sur l'effet de cette politique ?
+
+    \subsection{Correction}
+
+    \textbf{1. Concurrence pure et parfaite}
+
+    Comme l'on est en concurrence pure et parfaite, les individus et les entreprises
+    prennent les prix, en l'occurence le prix d'une unité de travail \(s\) comme
+    donné.
+
+    \textit{Comportement des individus.} Ils maximisent leur utilité. Ils choisissent
+    donc leur niveau de travail \(T\) et de consommation \(C\) qui maximise leur utilité.
+
+    La contrainte budgétaire de l'indididu est \( 1 \times C = s \times T \).
+
+    On peut substituer la contrainte de budget \(C = sT\) dans l'utilité, et
+    trouver le maximum de l'utilité en la dérivant par rapport à \(T\) (ou \(C\)).
+
+    Exprimons, par exemple, l'utilité en fonction de \(T\) :
+    \begin{align*}
+        U\left(C,T\right) & = U\left(sT,T\right) \\
+                          & = sT -  - \frac{1}{2} T^{2}
+    \end{align*}
+
+    On peut alors calculer la dérivée de \( U \) : \[ \frac{dU}{dT} = s - T \]
+
+    À l'optimum, cette dérivée est nulle, i.e. le \(T^{*}\) choisi par l'individu
+    est tel que \[\frac{dU}{dT}\Bigr|_{T^{*}} = 0 \Rightarrow s - T^{*} = 0
+    \Rightarrow T^{*} = s\]
+
+    Chaque individu offre donc \(T^{*} = s\) unités de travail, et consomme \(C^{*} = sT = s^2\).
+
+    Comme il y a \(N\) individus identiques dans notre économie, l'offre totale de travail que
+    l'on notera \(OT\) est \(OT = Ns\).
+
+    \textit{Comportement des entreprises.} Elles maximisent leur profit. Elles choisissent
+    donc leur niveau de travail \(T\) qui maximise leur profit.
+
+    Le profit \( \Pi \) de l'entreprise est égal à :
+    \[ \Pi = \underbrace{1 \times \left(  T - \frac{1}{2}T^{2} \right)}_{\text{La
+    quantité de bien } y \text{ produite fois son prix de vente}} -
+    \underbrace{sT}_{\text{Le coût du facteur de production}} \]
+
+    À l'optimum, la dérivée s'annule :
+    \[ \frac{d\Pi}{dT} = 1 - T^{*} - s = 0 \]
+
+    Chaque entreprise demande donc \(T^{*} = 1-s\) unités de travail, et produit
+    \(f\left(T^{*}\right) = T^{*} - \frac{1}{2}{T^{*}}^{2} = 1 - s - \frac{1}{2}{\left(1-s\right)}^{2} =
+    \frac{1}{2} - \frac{1}{2}{s}^{2} \) unités du bien \(y\).
+
+    Comme il y a \(M\) entreprises identiques dans notre économie, la demande totale de travail que
+    l'on notera \(DT\) est \(DT = M\left(1-s\right)\).
+
+    \textit{Équilibre sur le marché du travail.} L'équilibre est la situation où
+    la demande est égale à l'offre, \( OT = DT \).
+
+    En notant \(s_{eq}\) le salaire d'équilibre, on a :
+    \begin{multline*}
+        OT = DT \\
+        \Rightarrow Ns_{eq} = M\left(1-s_{eq}\right) \\
+        \Rightarrow Ns_{eq} = M - Ms_{eq} \\
+        \Rightarrow Ns_{eq} + Ms_{eq} = M  \\
+        \Rightarrow \left(N+M\right) s_{eq} = M  \\
+        \Rightarrow s_{eq}= \frac{M}{N+N}
+    \end{multline*}
+
+    Pour ce niveau de salaire, la quantité de travail échangée sur le marché du
+    travail est :
+    \[q_{eq} = OT = DT = Ns_{eq} = M\left(1-s_{eq}\right) = \frac{MN}{N+M} \]
+
+    \begin{figure}[p]
+        \centering
+        \includegraphics[width=10cm]{offre_demande}
+        \caption{Représentation graphique du marché du travail pour \(M = 150\) et \(N = 50\)}
+    \end{figure}
+
+    Graphiquement, l'équilibre est le point où les courbes d'offre et de
+    demande se croisent.
+
+    Lorsque \(M\) augmente, le salaire augmente également (la demande de travail
+    augmentant toute choses égales par ailleurs) et tend vers 1 (salaire maximal
+    au delà duquel le profit d'une entreprise serait négatif).
+
+    Lorsque \(N\) augmente, pour une demande de travail donnée, chaque individu
+    travaille moins. La désutilité au travail étant croissante en \(T\), les
+    individus demandent une compensation plus faible par heure de travail
+    lorsqu'ils travaillent moins.
+
+    \textbf{2. Monopsone}
+
+    En situation de concurrence pure et parfaite, l'effet de l'offre ou de la
+    demande d'un individu ou d'une entreprise est négligeable : c'est pour cela
+    que l'individu comme l'entreprise considère le prix comme fixé et ne prend pas
+    en compte l'effet de sa demande ou son offre sur le prix.
+
+    En monopsone, la demande de travail par l'entreprise a un effet sur les prix ;
+    lorsqu'elle maximise son profit.
+
+    Si elle embauche une quantité \(q\) de travail, elle devra payer un salaire
+    de \(q/N\). Si elle payait un salaire inférieur, l'offre de travail totale serait
+    inférieure à \(q\).
+
+    Le profit du monopsone est alors :
+    \begin{align*}
+        \Pi &= M p_{y} f(q) - sq \\
+            &= M \left(q - \frac{1}{2} q^{2}\right) - \frac{q}{N} q
+    \end{align*}
+
+    La différence fondamentale entre le monopsone et la concurrence pure et
+    parfaite est que l'entreprise prend en compte le fait que le salaire n'est pas
+    fixe mais une fonction de sa demande de travail : \( s\left(q\right) = \frac{q}{N} \).
+
+    On obtient la demande de travail effectivement demandée par l'entreprise en
+    maximisant son profit :
+    \[ \frac{d\Pi}{dq} = M - Mq^{*} - \frac{2}{N} q^{*} = 0 \]
+
+    On trouve :
+    \[q^{*} = OT = \frac{MN}{MN +2} = q_{eq} = DT \]
+    \[ s_{eq} = \frac{q_{eq}}{N} =  \frac{M}{MN +2} \]
+
+    Prenons le cas où \(M=N\).
+
+    Le salaire d'équilibre en concurrence pure et parfaite est alors \(\frac{1}{2}\).
+    Le salaire d'équilibre en monopsone est de \(\frac{N}{N^{2} + 2}\).
+
+    Quand le nombre d'individus est très grand, le salaire en concurrence pure
+    et parfaite est toujours \(\frac{1}{2}\), alors qu'en monopsone, il tend vers 0 :
+    l'entreprise préfère embaucher une proportion de plus en plus faible d'individus
+    pour payer un salaire de plus en plus bas.
+
+    \textbf{3. Salaire minimum}
+
+    Analytiquement, on procède de la même manière que pour les questions précédentes :
+    les individus maximisent leur utilité, les entreprises maximisent leur profit et
+    l'on trouve le salaire et la quantité de travail d'équilibre en égalisant l'offre
+    et la demande.
+
+    La différence est que le salaire que les individus et entreprises considèrent
+    est :
+    \begin{itemize}
+        \item Si le salaire d'équilibre en l'absence de salaire minimum aurait été
+        inférieur à \(s_{min}\), le salaire minimum contraint les entreprises à payer
+        au moins \(s_{min}\). Il faut donc résoudre le modèle pour la situation
+        où \(s_{eq} = s_{min}\).
+        \item Si le salaire d'équilibre en l'absence de salaire minimum aurait été
+        supérieur à \(s_{min}\), le salaire minimum ne contraint  pas les entreprises à payer
+        au moins \(s_{min}\) : elles le faisait déjà. Il faut donc résoudre le modèle pour la situation
+        où le salaire d'équilibre est déterminé non par la contrainte, mais par l'offre et la
+        demande.
+    \end{itemize}
+
+    \begin{figure}[p]
+        \centering
+        \includegraphics[width=10cm]{s_min_sup}
+        \caption{Représentation graphique de l'effet d'un salaire minimum en
+        concurrence pure et parfaite}
+    \end{figure}
+
+    En conséquence :
+    \begin{enumerate}
+        \item Si le salaire minimum est inférieur au salaire d'équilibre en concurrence pure
+        et parfaite et au salaire d'équilibre en monopsone, il n'a aucun effet : les entreprises
+        payaient déjà plus que le salaire minimum. Les forcer à payer davantage que \(s_{min}\)
+        ne change donc rien.
+        \item Si le salaire minimum est inférieur au salaire d'équilibre en concurrence pure
+        et parfaite mais supérieur au salaire d'équilibre en monopsone, il n'a aucun effet en
+        concurrence pure et parfaite, mais il force le monopsone à payer davantage ses employés,
+        et donc à embaucher davantage.
+        \item Si le salaire minimum est supérieur au salaire d'équilibre en concurrence pure et
+        parfaite, l'offre de travail est supérieure à la demande.
+    \end{enumerate}
+
+	Le second point peut être démontré de la manière suivante. Le monopsone a deux choix : embaucher
+	entre \(0\) et \(Ns_{min}\) unités de travail au salaire minimum,  ou embaucher une quantité
+	supérieure à \(s_min\) et payer un salaire égal à \(q_{t} / N\).
+
+	On est dans le cas où le salaire minimum est entre le salaire d'équilibre en monopsone et le salaire
+	d'équilibre en concurrence pure et parfaite, c'est à dire :
+	\[ \frac{M}{MN+2} \geq s_{min} \geq \frac{M}{M+N}\]
+
+    Prenons un cas plausible du monopsone, par exemple \(M=1\) et \(N=100\)
+
+	Dans le premier cas,
+	\begin{align*}
+	\frac{d\Pi}{dq} &= M - Mq - s_{min} \\
+					&\geq M - MNs_{min} - s_{min} \\
+					&\geq M - \left(MN+1\right) s_{min} \\
+					&\geq M - \left(MN+1\right) s_{min} \\
+					&\geq M - \left(MN+1\right) \frac{M}{M+N} \\
+					&\geq M \left(1-\frac{MN+1}{M+N}\right) \\
+					&\geq 1 \times \left( 1 - 1 \right) \\
+					&\geq 0
+	\end{align*}
+
+	Si le monopsone embauche moins de \(Ns_{min}\) unités de travail, la dérivée de son
+	profit est toujours positive ; autrement dit, le monopsone souhaite toujours
+	augmenter le nombre d'heures de travail qu'il achète, jusqu'à atteindre le maximum
+	de \(Ns_{min}\) unités de travail.
+
+	Un calcul similaire montre que dans le second cas, le monopsone veut toujours
+	diminuer sa consommation d'heures de travail jusqu'au minimum de \(Ns_{min}\) unités de travail.
+
+    Dès lors, la quantité effectivement demandée par le monopsone est \(Ns_{min}\) et augmente
+	donc lorsque \(s_{min}\) augmente.
+
+	Dans le cas général, la quantité choisie par une entreprise sera atteinte quand la
+	dérivée de son profit est égale à 0 :
+	\begin{multline*}
+	\frac{d\Pi}{dq} = \frac{d\left(q-\frac{q^{2}}{2} - sq \right)}{dq} = 0 \\
+	\Rightarrow 1 - q^{*} - s'q^{*} - s = 0 \\
+	\Rightarrow q^{*} = \frac{1-s}{1+s'}
+	\end{multline*}
+
+	En concurrence pure et parfaite, le salaire d'équilibre n'est pas affecté
+	par la demande d'une seule entreprise : \(s' = 0\).
+
+	En monopsone, \(s'>0\), et la quantité d'équilibre est donc plus faible en monopsone qu'en
+	concurrence pure et parfaite.
+
+	La déviation par rapport à l'équilibre compétitif sera d'autant plus importante
+	que le salaire d'équilibre réagit à un changement de la quantité (ie.\ que \(s'\) est
+	large), c'est à dire lorsque la demande est plus élastique.
+
+    \textbf{4. Card \& Krueger}
+
+    Les auteurs étudient l'augmentation du salaire minimum dans le New Jersey de
+    \$4.25 à \$5.05 en 1992.
+
+    Si le marché du travail était en concurrence pure et parfaite, l'effet
+    attendu de cette mesure serait une baisse de l'emploi dans les entreprises
+    affectées ; en monopsone ou oligopsone, l'effet attendu est une hausse de
+    l'emploi et une répercussion sur les prix de vente des entreprises
+    affectées.
+
+    Les auteurs concluent que cette hausse du salaire minimum n'a pas eu d'effet
+    négatif sur l'emploi ni d'effet positif sur les prix dans les entreprises
+    les plus affectées.
+
+\end{document}
