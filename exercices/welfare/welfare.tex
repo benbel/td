@@ -1,0 +1,186 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[french]{babel}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{xcolor}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{eurosym}
+
+\usepackage{graphicx}
+
+\usepackage{tikz}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    }
+
+\usepackage[]{geometry}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{.5\baselineskip}
+\linespread{1.3}
+
+\begin{document}
+
+    \section*{Exercices sur l'économie du bien-être}
+
+	\subsection*{Amélioration au sens de Pareto et boîte de Edgeworth}
+
+    \textbf{1.} Si pour deux agents, A et B, et deux biens, j et k, la fonction
+    d'utilité est $u_a=u_b=j*k$ et l'allocation initiale est $ e_a=(5,3)$ et $e_b=(5,7)$,
+    quelle allocation est améliorante au sens de Pareto ?
+		\begin{enumerate}
+		\item $e_a = (5,8)$ et $e_b = (5,2)$
+		\item $e_a = (6,6)$ et $e_b = (4,4)$
+		\item $e_a = (6,5)$ et $e_b = (4,5)$
+		\item $e_a = (4,4)$ et $e_b = (6,6)$
+		\end{enumerate}
+
+    \begin{center}
+    \begin{tikzpicture}
+        \draw (0,10) node[left] {100} -- (0,0) node[midway,left] {Bien Y} node[left]{A} -- (10,0) node[midway,below] {Bien X} node[below] {100};
+        \draw (0,10) node[left] {100} -- (10,10) node[midway,above] {Bien X} node[right]{B} -- (10,0) node[midway,right] {Bien Y} node[below] {100};
+
+        \draw[very thick] (1, 9) to[out=0,in=90] (9, 1);
+        \draw[very thick] (1, 6.63) to[out=0,in=90] (6.63, 1);
+        \draw[thick,dashed] (1, 7.5) to[out=0,in=90] (7.5, 1);
+        \draw[thick,dashed] (1, 8.25) to[out=0,in=90] (8.25, 1);
+        \draw[thick,dashed,red] (3.33, 9) to[out=-90,in=180] (9, 3.33);
+
+        \draw[very thick,red] (1, 9) to[out=-90,in=180] (9, 1);
+        \draw[thick,dashed,red] (1.8, 9) to[out=-90,in=180] (9, 1.8);
+        \draw[thick,dashed,red] (2.5, 9) to[out=-90,in=180] (9, 2.5);
+        \draw[very thick,red] (3.33, 9) to[out=-90,in=180] (9, 3.33);
+
+        \draw[fill=blue] (1,9) circle (1mm) node[left=2pt] {a};
+        \draw[fill=blue] (9,1) circle (1mm) node[right=2pt] {b};
+        \draw[fill=blue] (5,5) circle (1mm) node[right=2pt] {c};
+        \draw[fill=blue] (8.85,2.5) circle (1mm) node[right=2pt] {d};
+        \draw[fill=blue] (1.8,8.95) circle (1mm) node[above=2pt] {e};
+
+    \end{tikzpicture}
+    \end{center}
+
+    \textbf{2.} Dans la boîte de Edgeworth ci-dessus, quelles sont les allocations
+        Pareto-efficaces ?
+        \begin{enumerate}
+            \item Il n'y a pas d'allocation Pareto-efficace représentée
+            \item \textsc{a} et \textsc{b}
+            \item \textsc{c}
+            \item \textsc{d}
+	    \end{enumerate}
+
+
+    \textbf{3.} Dans la boîte de Edgeworth ci-dessus, quelles sont les allocations
+        Pareto-améliorantes par rapport à \textsc{e} ?
+        \begin{enumerate}
+            \item \textsc{a}, \textsc{d} et \textsc{b}
+            \item \textsc{c}
+            \item \textsc{d}
+            \item \textsc{c} et \textsc{d}
+	    \end{enumerate}
+
+    \textbf{4.} Dans une boîte de Edgeworth, que représente la courbe des contrats ?
+	    \begin{enumerate}
+	    \item Les allocations Pareto-améliorantes
+	    \item Les allocations Pareto-efficaces
+	    \item Les courbes d'indifférence des deux agents
+	    \item Les allocations qui maximisent le bien-être social
+	    \end{enumerate}
+
+
+	\textbf{5.} Le critère de Pareto permet-il de classer entre elles toutes
+        les situations possibles ?
+
+    \subsection*{\textsc{tms}} 
+
+    On réprésente les préférences d'un individu par la fonction d'utilité
+        \(U\left(x,y\right) = x^{2} + y^{2}\). Quel est le taux marginal de substitution
+        du bien $x$ en termes du bien $y$ pour cet agent ? On raisonne ici en valeur absolue,
+        c'est-à-dire avec un \textsc{tms} positif.
+		\begin{enumerate}
+		\item $\frac{x}{y}$
+		\item $2 \frac{x}{y}$
+		\item $y$
+		\item $2x$
+		\end{enumerate}
+
+    \subsection*{Théorèmes du bien-être}
+     Laquelle des propositions suivantes énonce le premier théorème du bien-être ?
+	    \begin{enumerate}
+	    \item Toute allocation Pareto optimale est efficace.
+	    \item Toute allocation d'équilibre concurrentiel est un optimum de Pareto.
+	    \item Toute allocation d'équilibre concurrentiel peut être rendue équitable
+              après avoir réalisé les transferts adéquats.
+	    \item Toute allocation Pareto optimale peut être obtenue comme équilibre
+        concurrentiel après réallocation adéquate des dotations initiales.
+	    \end{enumerate}
+
+    \subsection*{Edgeworth}
+
+    On étudie une économie avec deux agents, \(A\) et \(B\), et deux biens, \(\gamma\)
+    et \(\delta\).
+
+    La quantité totale du bien \(\gamma\) est de 5 unités et celle du bien \(\delta\)
+    est de 10 unités.
+
+    On note \(\gamma_{A}\) la quantité du bien \(\gamma\) détenue par l'individu
+    \(A\), \(\delta_{A}\) la quantité du bien \(\delta\) détenue par l'individu
+    \(A\), \(\gamma_{B}\) la quantité du bien \(\gamma\) détenue par l'individu
+    \(B\), et \(\delta_{B}\) la quantité du bien \(\delta\) détenue par l'individu
+    \(B\).
+
+    Les deux agents ont pour fonction d'utilité respectivement \(U_{A}\left(\gamma_{A},
+    \delta_{A}\right) = \gamma_{A} + \delta_{A}^{1/2}\) et
+    \(U_{B}\left(\gamma_{B}, \delta_{B}\right) = \gamma_{B}^{1/2} + \delta_{B}\)
+
+
+    L'allocation initale des biens est de 3 unités du bien \(\gamma\) et 4
+    unités du bien \(\delta\) pour \(A\), que l'on note \(A = \left(3,4\right)\),
+    et de \(B = \left(2,6\right)\).
+
+    \textbf{1.} Représentez cette économie par une boîte de Edgeworth
+
+    \textbf{2.} Représentez les courbes d'indifférence sur lesquels se placent
+    les deux individus
+
+    \textbf{3.} L'allocation initiale est-elle Pareto-efficace ?
+    Si non, quelles sont les allocations Pareto-améliorantes ?
+
+    \textbf{4.} Déterminez une allocation Pareto-efficace. 
+    Calculez le taux marginal de substitution des deux agents en ce point.
+    Quelle propriété satisfont-ils ?
+
+    \textbf{5.} L'allocation initiale respecte-t'elle le principe rawlsien du maximin ?
+
+    \subsection*{SWF}
+    
+    On étudie une économie de 10 agents, numérotés de 1 à 10, dont les revenus
+    du travail sont :
+
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{c|cccccccccc}
+            Individu & 1 & 2 & 3 & 4  & 5  & 6  & 7  & 8  & 9  & 10 \\ \hline
+            Revenu   & 0 & 0 & 5 & 10 & 10 & 20 & 30 & 40 & 50 & 85
+        \end{tabular}
+    \end{table}
+
+    \textbf{1.} Quel est le revenu moyen ? Quel est le revenu médian ?
+
+    \textbf{2.} Tracez la courbe de Lorenz pour le revenu dans cette économie.
+
+    Supposez que tous les agents ont une fonction d'utilité
+    \(U\left(R\right) = R^{1/2}\).
+
+    \textbf{3.} Quels transferts faudrait-il mettre en place pour maximiser une
+    fonction de bien-être social utilitariste ?
+
+\end{document}

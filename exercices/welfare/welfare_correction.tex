@@ -1,0 +1,285 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[french]{babel}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{xcolor}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{eurosym}
+
+\usepackage{graphicx}
+
+\usepackage{tikz}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    }
+
+\usepackage[]{geometry}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{.5\baselineskip}
+\linespread{1.3}
+
+\begin{document}
+
+    \section*{Correction des  sur l'économie du bien-être}
+
+	\subsection*{Amélioration au sens de Pareto et boîte de Edgeworth}
+
+    \textbf{1.} Pour qu'une allocation soit améliorante au sens de Pareto, il faut (par
+    définition de ce qu'est une amélioration au sens de Pareto) que l'utilité
+    des deux agents soit au moins aussi élevée que dans l'allocation initiale
+    (personne n'est lésé) et que l'utilité d'au moins un des deux agents soit
+    plus élevée.
+
+    Dans l'allocation initiale, \(u_a = 5 * 3 = 15\) et \(u_b = 5*7 = 35\)
+
+    Autrement, on cherche une allocation telle que :
+    \begin{itemize}
+        \item \(u_a = 15\) et \(u_b > 35\),
+        \item ou \(u_a > 15\) et \(u_b = 35\)
+        \item ou \(u_a > 15\) et \(u_b > 35\)
+    \end{itemize}
+
+    L'allocation \(4\) est Pareto améliorante, puisque \(u_a = 16 > 15\) et
+    \(u_b = 36 > 35\).
+
+    \textbf{2.} Seule l'allocation \(c\) est efficace au sens de Pareto.
+
+    Graphiquement, les allocations qui améliorent l'utilité de l'agent \textit{A}
+    par rapport à une allocation donnée se situent \og{}en haut à droite\fg{}
+    (i.e.\ plus loin de l'origine pour \textit{A})  de la courbe d'indifférence de l'individu
+    \textit{A} sur laquelle se trouve l'allocation en question.
+
+    De la même manière, les allocations qui améliorent l'utilité de l'agent
+    \textit{B} par rapport à une allocation donnée se situent
+    \og{}en bas à gauche\fg{} (i.e.\ plus loin de l'origine pour \textit{B})
+    de la courbe d'indifférence de l'individu \textit{B} sur laquelle se trouve
+    l'allocation en question.
+
+    Les allocations améliorantes au sens de Pareto se trouvent donc dans
+    l'intersection de ses deux surfaces, c'est à dire dans la lentille formée
+    par les courbes d'indifférence de \textit{A} et \textit{B} qui passent par
+    l'allocation.
+
+    Une allocation est efficace au sens de Pareto si il n'existe pas
+    d'amélioration au sens de Pareto ; ainsi, la lentille est vide, i.e.\ les
+    deux courbes d'indifférence sont tangentes l'une à l'autre.
+
+    \textbf{3.} L'allocation \(c\) se situe sur une courbe d'indifférence
+    correspondant à une utilité supérieure pour \textit{A} comme pour \textit{B}
+    : elle est donc Pareto-améliorante par rapport à \(e\). L'allocation \(d\)
+    ne dimininue ni n'augmente l'utilité de \textit{B} (même courbe
+    d'indifférence) ; elle augmente celle de \textit{A} : c'est donc également
+    une Pareto-amélioration.
+
+    \textbf{4.} L'ensemble des allocations efficaces.
+
+    \textbf{5.} Non, puisqu'il existe une infinité d'allocations efficaces.
+
+    \subsection*{TMS}
+
+        \[TMS_{x,y} = \frac{\frac{\partial U}{\partial x}}{\frac{\partial U
+        }{\partial y}} = \frac{2x}{2y} = \frac{x}{y} \]
+    \textbf{1.} Si pour deux agents, A et B, et deux biens, j et k, la fonction
+    d'utilité est $u_a=u_b=j*k$ et l'allocation initiale est $ e_a=(5,3)$ et $e_b=(5,7)$,
+    quelle allocation est améliorante au sens de Pareto ?
+		\begin{enumerate}
+		\item $e_a = (5,8)$ et $e_b = (5,2)$
+		\item $e_a = (6,6)$ et $e_b = (4,4)$
+		\item $e_a = (6,5)$ et $e_b = (4,5)$
+		\item $e_a = (4,4)$ et $e_b = (6,6)$
+		\end{enumerate}
+
+
+    \subsection*{Edgeworth}
+
+    \textbf{1 \& 2} Cf.\ graphes.
+
+    \begin{figure}[p]
+        \centering
+        \includegraphics[width=8cm]{allocation_initiale}
+        \includegraphics[width=8cm]{indifference_a}
+        \includegraphics[width=8cm]{indifference_b}
+        \caption{Représentation graphique de l'économie}
+    \end{figure}
+
+    \textbf{3.} Non : toutes les allocations dans la lentille en haut à gauche de
+    l'allocation initiale sont des améliorations au sens de Pareto :
+    \begin{itemize}
+        \item le long de la courbe d'indifférence de \(A\) (en orange),
+            l'utilité de \(A\) est inchangée et celle de \(B\) est plus élevée
+        \item le long de la courbe d'indifférence de \(B\) (en bleu),
+            l'utilité de \(B\) est inchangée et celle de \(A\) est plus élevée
+        \item entre les deux courbes, l'utilité des deux agents augmente
+    \end{itemize}
+
+    \textbf{4.} Trivialement, les allocations où tous les biens sont possédés par \(A\) ou
+    par \(B\) sont Pareto-efficaces.
+
+    On peut également partir de la définition de l'équilibre (la demande totale
+    pour chacun des deux biens est égale à l'offre) ou d'une de ses propriétés
+    (les taux marginaux de substitution sont égaux à l'équilibre) pour trouver
+    un équilibre : or, comme toutes les équilibres concurrentiels sont efficaces
+    au sens de Pareto, cela correspond à une allocation Pareto-efficace.
+
+    Partons de l'allocation \(A = \left(4, 1\right)\) et \(B = \left(1, 9\right)\)
+    (pour se simplifier les calculs
+    et notamment éviter les cas particuliers où la consommation optimale d'un bien est
+    négative). Le raisonnement est le même quelque soit l'allocation de départ.
+
+    Notons \(p_{\delta}\) le prix d'équilibre du bien \(\delta\) exprimé en unités
+    du bien \(\gamma\). Notons \(p_{\gamma}\) le prix d'équilibre du bien \(\gamma\)
+    exprimé en unités du bien \(\gamma\). On a donc \(p_{\gamma} = 1\). On appelle
+    alors le bien \(\gamma\) le numéraire.
+
+    Plus généralement, si \(\left(p'_{\delta}, p'_{\gamma}\right)\) sont les prix
+    d'équilibre, alors pour tout \(\Phi > 0\), \(\left(p'_{\delta} / \Phi, p'_{\gamma} / \Phi \right)\)
+    sont également des prix d'équilibre. Par souci de clarté, on fixe un des prix
+    à 1 (le prix du bien numéraire). Ici, on prend \(\Phi = p'_{\gamma}\) et le vecteur
+    des prix d'équilibre est donc \(\left(p'_{\delta} / p'_{\gamma}, p'_{\gamma} / p'_{\gamma} \right) = \left(p_{\delta}, 1\right)\).
+
+    Compte tenu de ces prix d'équilibre et de l'allocation initiale, la valeur
+    des biens détenus par \(A\) est :
+    \[ R_{A} = \gamma^{\text{initial}}_{A} \times p_{\gamma} + \delta^{\text{initial}}_{A} \times p_{\delta} = 4 \times 1 + 1 \times p_{\delta} = 4 + p_{\delta} \]
+
+    La valeur de son panier de consommation est :
+    \[ \gamma_{A} \times p_{\gamma} + \delta_{A} \times p_{\delta} = \gamma_{A}  + \delta_{A} \times p_{\delta} \]
+
+    À l'optimum, la contrainte de budget sera saturée :
+    \[ \gamma_{A}  + \delta_{A} \times p_{\delta}  = 4 + p_{\delta} \Rightarrow \gamma_{A} = 4 + p_{\delta} - \delta_{A} p_{\delta} \]
+
+    L'individu \(A\) maximise son utilité :
+    \[ \max U_{A} = \gamma_{A} + \delta_{A}^{1/2} =  4 + p_{\delta} - \delta_{A} p_{\delta} + \delta_{A}^{1/2}\]
+
+    Au maximum, la dérivée de \(U_{A}\) par rapport à la variable de choix (\(\delta_{A}\)) est nulle :
+    \begin{multline*}
+         \frac{dU_{A}}{d\delta_{A}} = - p_{\delta} + \frac{1}{2\sqrt{\delta_{A}}} = 0 \\
+        \Rightarrow \delta_{A} = \frac{1}{4p_{\delta}^{2}} \\
+        \Rightarrow \gamma_{A} = 4 + p_{\delta} - \frac{1}{4p_{\delta}}
+    \end{multline*}
+
+    On procède de la même manière pour l'individu \(B\) (i.e.\ on exprime son
+    revenu, sa contrainte de budget et on maximise son utilité sous containte), et
+    l'on obtient :
+    \begin{align*}
+        \gamma_{B} &= \frac{1}{4} p_{\delta}^{2}\\
+        \delta_{B} &= \frac{1}{p_{\delta}} - \frac{1}{4} p_{\delta} + 9\\
+    \end{align*}
+
+    Nous avons donc les offres totales en \(\gamma\) et en \(\delta\) (qui sont
+    fixes et données dans l'énoncé), ainsi que les demandes totales en \(\gamma\)
+    et en \(\delta\), qui sont respectivement \(\gamma_{A} + \gamma_{B}\) et
+    \(\delta_{A} + \delta_{B}\).
+
+    À l'équilibre (par définition de ce qu'est l'équilibre), l'offre est égale
+    à la demande pour chacun des biens :
+    \begin{align*}
+        5 &= \gamma_{A} + \gamma_{B} &=  4 + p_{\delta} - \frac{1}{4p_{\delta}} + \frac{1}{4p_{\delta}^{2}} \\
+        10 &= \delta_{A} + \delta_{B} &=  \frac{1}{4p_{\delta}^{2}} +  \frac{1}{p_{\delta}} - \frac{1}{4} p_{\delta} + 9
+    \end{align*}
+
+    À partir de ces équations, il est possible de calculer le prix \(p_{\delta}\) d'équilibre.
+
+    Partons de la seconde équation :
+    \begin{align*}
+        & 10 = \frac{1}{4p_{\delta}^{2}} +  \frac{1}{p_{\delta}} - \frac{1}{4} p_{\delta} + 9 \\
+        \Rightarrow & 1 =  \frac{1}{4p_{\delta}^{2}} +  \frac{1}{p_{\delta}} - \frac{1}{4} p_{\delta} \\
+        \Rightarrow & \frac{1}{4p_{\delta}^{2}} +  \frac{1}{p_{\delta}} - \frac{1}{4} p_{\delta} - 1 = 0 \\
+        \Rightarrow & \frac{1}{4} +  p_{\delta} - \frac{1}{4} p_{\delta}^{3} - p_{\delta}^{2} = 0 \\
+        \Rightarrow & 1 +  4 p_{\delta} -  p_{\delta}^{3} - 4 \times p_{\delta}^{2} = 0 \\
+    \end{align*}
+
+    À partir de la dernière ligne, on peut résoudre à la main l'équation ou \href{https://www.wolframalpha.com/input/?i=solve+1+%2B+4x+-+x%5E3+-+4x%5E2+%3D+0}{via
+    son ordinateur} et on trouve \(p_{\delta} = 1\).
+
+    On peut en déduire toutes les quantités d'équilibre :
+    \begin{align*}
+        \gamma_{A} &= 4 + p_{\delta} - \frac{1}{4p_{\delta}} &= 4 + 1 - \frac{1}{4} &= 5 - \frac{1}{4} \\
+        \delta_{A} &= \frac{1}{4p_{\delta}^{2}}  &= \frac{1}{4}\\
+        \gamma_{B} &= \frac{1}{4} p_{\delta}^{2} &= \frac{1}{4}\\
+        \delta_{B} &= \frac{1}{p_{\delta}} - \frac{1}{4} p_{\delta} + 9 &= 1 - \frac{1}{4} + 9 &= 10 - \frac{1}{4}
+    \end{align*}
+
+    D'après le premier théorème du bien-être l'allocation \(A = \left( 5 - \frac{1}{4}, \frac{1}{4} \right) \) et
+    \( B = \left( \frac{1}{4}, 10 - \frac{1}{4} \right) \) est Pareto-efficace.
+
+    On peut en déduire les taux marginaux de substitution en ce point :
+    \begin{align*}
+        TMS_{\gamma,\delta}^{A} &= \frac{\partial U_{A}}{\partial \gamma_{A}} / \frac{\partial U_{A}}{\partial \delta_{A}} = \frac{1}{\frac{1}{2\sqrt{\frac{1}{4}}}} = 2 \sqrt{\frac{1}{4}} = 2 \times \frac{1}{2} &= 1 \\
+        TMS_{\gamma,\delta}^{B} &= \frac{\partial U_{B}}{\partial \gamma_{B}} / \frac{\partial U_{B}}{\partial \delta_{B}} = \frac{\frac{1}{2\sqrt{\frac{1}{4}}}}{1} = \frac{1}{2\sqrt{\frac{1}{4}}} = \frac{1}{2 \times \frac{1}{2}} &= 1 \\
+        \frac{p_{\gamma}}{p_{\delta}} &= \frac{1}{1} &= 1
+    \end{align*}
+
+    Au point d'équilibre qui est aussi une allocation Pareto-efficace, les taux
+    marginaux de substitution des deux agents sont égaux et égaux au ratio des
+    prix. Graphiquement, les deux courbes d'indifférence et la droite de budget sont tangentes.
+
+    \textbf{5.} L'utilité de l'individu qui a la plus basse utilité (\(A\)) est de 5.
+
+    Pour l'allocation (par exemple) \(A = \left(5,1\right)\) et \(B =
+    \left(0,9\right)\), l'utilité de l'individu qui a la plus basse utilité
+    (toujours \(A\)) est maintenant de 6.
+
+    L'allocation initiale ne maximise donc pas l'utilité de l'individu le moins
+    bien loti.
+
+    \subsection*{Théories de la justice sociale}
+
+    \textbf{1.}
+        \begin{itemize}
+        \item Impossibilité pratique de mesurer l'utilité
+        \item Poids identique accordé à tous les individus indépendemment de
+            leurs caractéristiques (par exemple, pas de considération
+            particulière pour les plus pauvres en tant que tels)
+        \item Pas de jugement sur la manière dont l'utilité est procurée, i.e.\
+            deux activités qui procurent la même utilité sont jugées aussi
+            bonnes (e.g.\ persécuter une minorité peut donc être optimal)
+        \item Pas de considération pour les droits fondamentaux en dehors de
+            l'utilité qu'ils pourraient apporter
+    \end{itemize}
+
+    \textbf{2.} Oui, tant que cette distribution améliore le sort du moins bien loti.
+    Une allocation qui améliore le sort du moins bien loti mais augmente les
+    inégalités est donc positive au sens du maximin.
+
+    \subsection*{SWF}
+
+    \textbf{1.} Le revenu moyen est de 25 et le revenu médian (revenu tel que la moitié des
+    individus ont plus que ce revenu et l'autre moitié a moins) est de 15.
+
+    \textbf{2.} Cf.\ graphe.
+
+    \begin{figure}[p]
+        \centering
+        \includegraphics[width=8cm]{lorenz}
+        \caption{Courbe de Lorenz de cette économie}
+    \end{figure}
+
+    \textbf{3.} Soient deux agents \(A\) et \(B\) tels que \(R_{A} > R_{B}\).
+
+    Alors, l'utilité marginale de \(A\) est plus faible que celle de \(B\) :
+    \[ \frac{dU_A}{R_{A}} = \frac{1}{2\sqrt{R_{A}}} < \frac{1}{2\sqrt{R_{B}}} = \frac{dU_B}{R_{B}} \]
+
+    Ainsi, lorsque l'on transfert du revenu de \(A\) à \(B\) on modifie la somme \(U_A + U_B\) (et
+    donc la fonction de bien-être social) de \( - \frac{dU_A}{R_{A}} + \frac{dU_B}{R_{B}} > 0\).
+
+    Autrement dit, tout transfert des plus riches vers les plus pauvres augmente la somme
+    des utilités.
+
+    La fonciton de bien-être social est donc maximisée quand il n'est plus possible de l'augmenter,
+    i.e.\ quand il n'y a plus de transfert des riches vers les pauvres possibles, i.e.\ lorsque
+    tous les individus ont le même revenu.
+
+    Il faut donc appliquer un transfert de \(25 - R_{i}\) à tous les individus, de telle sorte
+    que le revenu de chacun soit, après transfert \(R_{i} + \left(25 - R_{i}\right) = 25\).
+
+\end{document}
+
