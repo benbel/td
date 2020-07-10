@@ -1,8 +1,205 @@
-\documentclass[../main.tex]{subfiles}
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[french]{babel}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{xcolor}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{eurosym}
+
+\usepackage{graphicx}
+
+\usepackage{tikz}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    }
+
+\usepackage[]{geometry}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{.5\baselineskip}
+\linespread{1.3}
+
 
 \begin{document}
 
-\begin{frame}
+    \section*{Économétrie 101}
+
+    \textit{Ce document présente un traitement informel du modèle causal de Rubin et des
+    méthodes d'économétrie. Deux références sur le sujet sont \textit{Mastering
+    Metrics} et \textit{Mostly Harmless Econometrics}, de J.\ Angrist et J.-S.\
+    Pischke.}
+
+    La plupart des travaux empiriques d'économie cherchent à mesurer l'effet
+    que cause une variable (que l'on nomme \textit{traitement}) sur une autre (que l'on
+    appelle généralement \textit{variable d'intérêt}).
+
+    Qu'entend-on par \textit{effet du traitement} ? Il s'agit de la différence
+    du niveau de la variable d'intérêt avec ou sans traitement, toutes choses
+    égales par ailleurs.
+
+    Par exemple (chiffres fictifs) si le taux de chômage à Trantor est de
+    10\% avec une semaine de travail  de 35 heures alors qu'il aurait été de 8\% avec une semaine de travail de
+    39 heures, l'effet du traitement \og{}passer d'une durée de la semaine de
+    travail de 39 heures à 35 heures\fg{}sur la variable d'intérêt \og{}taux
+    de chômage\fg{} est de \(10\% - 8\% =  2\) points de pourcentage.
+
+    Soit \(T_{\text{Trantor}}\) une variable qui est égale à 1 si la Trantor est
+    \og{}traitée\fg{} (dans notre exemple, passage aux 35 heures) et 0 si elle
+    ne l'est pas.
+
+    On note \(Y_{\text{Trantor}}\) notre variable d'intérêt. Elle peut prendre deux
+    valeurs possibles : \(Y_{\text{Trantor}}\left(1\right)\),
+    si  \(T_{\text{Trantor}} = 1\) et \(Y_{\text{Trantor}}\left(0\right)\),
+    si  \(T_{\text{Trantor}} = 0\).
+    
+    Autrement dit,
+    \[ Y_{\text{Trantor}} = \begin{cases}
+        Y_{\text{Trantor}}\left(1\right) & \text{si }  T_{\text{Trantor}} = 1 \\
+        Y_{\text{Trantor}}\left(0\right) & \text{si }  T_{\text{Trantor}} = 0 
+        \end{cases}
+    \]
+
+    Dans notre exemple,
+    \[ Y_{\text{Trantor}}\left(1\right) = 10 \% \]
+    \[ Y_{\text{Trantor}}\left(0\right) = 8 \% \]
+    \[ Y_{\text{Trantor}} = Y_{\text{Trantor}}\left(1\right) = 10 \% \]
+
+
+    L'effet causal \(\Delta\) du traitement est donc :
+    \[ \Delta_{\text{Trantor}} = Y_{\text{Trantor}}\left(1\right) -
+    Y_{\text{Trantor}}\left(0\right) \]
+
+    Ou plus généralement, pour une observation \(i\) :
+    \[ \Delta_{i} = Y_{i}\left(1\right) -
+    Y_{i}\left(0\right) \]
+
+    Est-il possible de mesurer à la fois \(Y_{\text{Trantor}}\left(1\right) \)
+    et \(Y_{\text{Trantor}}\left(0\right)\) ?
+
+    Non : il n'est possible de mesurer que des évènements qui se sont
+    effectivement réalisés.
+
+    Soit \(T_{\text{Trantor}} = 1\) et il est possible d'observer
+    \(Y_{\text{Trantor}}\left(1\right)\) mais pas
+    \(Y_{\text{Trantor}}\left(0\right)\) ; soit
+    \(T_{\text{Trantor}} = 0\) et il est possible d'observer
+    \(Y_{\text{Trantor}}\left(0\right)\) mais pas
+    \(Y_{\text{Trantor}}\left(1\right)\).
+
+    Quelque soit le statut du traitement (traité ou non traité), il manquera
+    toujours la mesure du \textit{contrefactuel}, c'est à dire de l'évènement non
+    réalisé pour calculer l'effet du traitement.
+
+    \begin{table}[h]
+        \begin{tabular}{|l|l|l|}
+        \hline
+        L'observation reçoit-elle le traitement ? & Réalité observable & Contrefactuel inobservable \\ \hline
+        Oui : $T_{i} = 1$ & $Y_{i}\left(1\right)$ & $Y_{i}\left(0\right)$ \\ \hline
+        Non : $T_{i} = 0$ & $Y_{i}\left(0\right)$ & $Y_{i}\left(1\right)$ \\ \hline
+        \end{tabular}
+    \end{table}
+
+    Implicitement ou explicitement, toute calcul d'effet de traitement (tel que
+    défini dans ce document) repose sur des hypothèses faites sur le ou les contrefactuels.
+
+    Pour reprendre notre exemple, une première solution à notre problème d'impossibilité
+    de mesurer le contrefactuel \(Y_{\text{Trantor}}\left(0\right)\)
+    serait de comparer Trantor à une autre région non traitée, i.e.\ dont la semaine de travail
+    est de 39 heures, par exemple Helicon.
+
+    On pourrait alors calculer 
+        \begin{align*}
+            \Delta' &= Y_{\text{Trantor}} - Y_{\text{Helicon}} \\
+                    &= Y_{\text{Trantor}}\left(1\right) - Y_{\text{Helicon}}\left(0\right)
+        \end{align*}
+
+    Les deux grandeurs, \(Y_{\text{Helicon}}\left(0\right)\)
+    et \(Y_{\text{Trantor}}\left(= 1\right)\) sont bien mesurables.
+    
+    Est-ce que \(\Delta' = \Delta\) ? Autrement dit, notre comparaison Helicon---Trantor
+    permet-elle de mesurer l'effet du traitement à Trantor ?
+    
+    Non, car la différence
+    entre les deux régions est composée à la fois de l'effet du traitement \textit{et}
+    des différences éventuelles entre Helicon et Trantor qui ne sont pas liées au
+    traitement. Il est tout à fait possible que, même en l'absence de traitement,
+    les deux régions aient un taux de chômage différent.
+
+    En effet,
+        \begin{align*}
+           & \Delta' = &
+               Y_{\text{Trantor}}\left(T_{\text{Trantor}} = 1\right)
+             - Y_{\text{Helicon}}\left(T_{\text{Helicon}} = 0\right) \\
+         & = &  Y_{\text{Trantor}}\left(T_{\text{Trantor}} = 1\right) \\
+         &  & - Y_{\text{Trantor}}\left(T_{\text{Trantor}} = 0\right)
+             + Y_{\text{Trantor}}\left(T_{\text{Trantor}} = 0\right) \\
+         &  & - Y_{\text{Helicon}}\left(T_{\text{Helicon}} = 0\right) \\
+         & = &   \underbrace{\Delta}_{\text{Effet du traitement}}
+             + \underbrace{Y_{\text{Trantor}}\left(T_{\text{Trantor}} = 0\right)
+             - Y_{\text{Helicon}}\left(T_{\text{Helicon}} = 0\right)}_{\text{Différence entre Helicon et Trantor en l'absence de traitement}} \\
+        \end{align*}
+
+    Affirmer que \(\Delta' = \Delta\), c'est supposer qu'en l'absence de traitement à Trantor, Trantor et Helicon auraient le même taux de chômage, i.e.\ que l'on se trouve dans le cas particulier où \(Y_{\text{Trantor}}\left(0\right) - Y_{\text{Helicon}}\left(0\right) = 0 \Rightarrow Y_{\text{Trantor}}\left(0\right) = Y_{\text{Helicon}}\left(0\right) \). Cette hypothèse n'est pas directement vérifiable (puisque l'on ne peut observer 
+    \(Y_{\text{Trantor}}\left(0\right)\)).
+    
+    Le même problème se retrouve lorsque l'on cherche à calculer un effet moyen du traitement sur un     ensemble d'observations. En notant \(\mathbf{E}\left[Y | X \right]\), la moyenne de \(Y\) pour
+    le groupe \(X\), l'effet moyen du traitement (que l'on notera \(\boldsymbol{\Delta}\)) est :
+    \begin{align*}
+        \boldsymbol{\Delta} = \mathbf{E}\left[\Delta_{i} \right] &= \mathbf{E}\left[Y_{i}\left(1\right) - Y_{i}\left(0\right) \right] \\
+                                       &= \mathbf{E}\left[Y_{i}\left(1\right)\right] - \mathbf{E}\left[Y_{i}\left(0\right) \right] \\
+    \end{align*}
+    
+    Comme pour notre comparaison Trantor --- Helicon, on pourrait être tenté de comparer la moyenne de \(Y\) parmi les
+    régions traitées à la moyenne des \(Y\) dans les régions non traitées. Cela permet-il de calculer l'effet moyen du traitement ?
+    Non, pour la même raison que précédemment : les régions traitées et non traitées diffèrent certes du fait de l'effet du 
+    traitement, mais peuvent également être différentes même en l'absence de traitement :
+    
+    \begin{align*}
+        & \boldsymbol{\Delta'} = &
+        \underbrace{\mathbf{E}\left[Y_{i} | T\left(i\right) = 1\right]}_{\text{Moyenne de la variable d'intérêt chez les traités}}   -  \underbrace{\mathbf{E}\left[Y_{i} | T\left(i\right) = 0\right]}_{\text{Moyenne de la variable d'intérêt chez les non traités}} \\
+    & = &\underbrace{\mathbf{E}\left[Y_{i}\left(1\right) | T\left(i\right) = 1\right]}_{\text{Moyenne de la variable d'intérêt chez les traités}}   -  \underbrace{\mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 0\right]}_{\text{Moyenne de la variable d'intérêt chez les non traités}} \\
+        & = & \mathbf{E}\left[Y_{i}\left(1\right) | T\left(i\right) = 1\right]  \underbrace{- \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 1\right] + \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 1\right]}_{=0} - \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 0\right] \\
+            & = & \underbrace{\mathbf{E}\left[Y_{i}\left(1\right) | T\left(i\right) = 1\right]  - \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 1\right]}_{=\boldsymbol{\Delta}} + \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 1\right] - \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 0\right] \\
+        & = & \underbrace{\boldsymbol{\Delta}}_{\text{Effet du traitement}} + \underbrace{\mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 1\right] - \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 0\right]}_{\text{Différence entre traités et non traités en l'absence de traitement}} 
+    \end{align*}
+    
+    Une comparaison naïve entre régions traitées et régions non traitées ne
+    permet pas de distinguer l'effet du traitement \(\boldsymbol{\Delta}\)
+    des différences pré-existantes entre traités et non traités \(
+    \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 1\right] - \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 0\right]\).
+
+    En effet, si --- par exemple --- \(\boldsymbol{\Delta'} = 0.05\), comment
+    savoir si :
+    
+    \begin{itemize}
+        \item \(\boldsymbol{\Delta} = 0.03\) et \(
+    \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 1\right] - \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 0\right] = 0.02\)
+        \item ou si \(\boldsymbol{\Delta} = -0.04\) et \(
+    \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 1\right] - \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 0\right] = 0.09\)
+        \item ou encore \(\boldsymbol{\Delta} = 0\) et \(
+    \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 1\right] - \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 0\right] = 0.05\) ?
+
+    \end{itemize}
+    
+    Il faut à nouveau supposer que \(\mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 1\right] - \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 0\right] = 0\). Hypothèse tout aussi invérifiable que précédemment (si \(T\left(i\right) = 1\), alors \(Y_{i} = Y_{i}\left(1\right)\) et \(Y_{i}\left(0\right)\) 
+    n'est pas observé et donc \( \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 1\right] = 0\) non plus).
+    
+    Dans quel cas l'hypothèse  \(\mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 1\right] - \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 0\right] = 0\) n'est-elle pas aberrante ?
+    
+    
+    
+    
+    
+\end{document}
+
     \frametitle{Point méthodologie : la différence de différence}
         \begin{itemize}
         \item Notations
@@ -349,7 +546,8 @@
         \item \(y\) : la variable d'intérêt
     \end{itemize}
     
-    Dans ce cas de l'expérience randomisé, l'instrument a un effet sur le niveau de traitement ; cet effet n'est pas nécessairement \og{}parfait\fg{} si certains individus sont assignés au groupe de traitement mais n'en bénéficient pas.
+    Dans ce cas de l'expérience randomisé, l'instrument a un effet sur le niveau de traitement ;
+ cet effet n'est pas nécessairement \og{}parfait\fg{} si certains individus sont assignés au groupe de traitement mais n'en bénéficient pas.
     Aucune variable n'influe à la fois sur l'instrument et sur la variable d'intérêt,
     puisque l'instrument est aléatoire. La variable d'intérêt
     n'influe pas sur l'instrument puisqu'il est complètement aléatoire.
@@ -624,4 +822,3 @@
 
     \dotfill
 
-\end{document}
