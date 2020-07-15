@@ -85,13 +85,13 @@
     et \(Y_{\text{Trantor}}\left(0\right)\) ?
 
     Non : il n'est possible de mesurer que des évènements qui se sont
-    effectivement réalisés.
-
+    effectivement réalisés, autrement dit \(Y_{\text{Trantor}}\).
+    
     Soit \(T_{\text{Trantor}} = 1\) et il est possible d'observer
-    \(Y_{\text{Trantor}}\left(1\right)\) mais pas
+    \(Y_{\text{Trantor}} = Y_{\text{Trantor}}\left(1\right)\) mais pas
     \(Y_{\text{Trantor}}\left(0\right)\) ; soit
     \(T_{\text{Trantor}} = 0\) et il est possible d'observer
-    \(Y_{\text{Trantor}}\left(0\right)\) mais pas
+    \(Y_{Y_{\text{Trantor}} = \text{Trantor}}\left(0\right)\) mais pas
     \(Y_{\text{Trantor}}\left(1\right)\).
 
     Quelque soit le statut du traitement (traité ou non traité), il manquera
@@ -122,7 +122,7 @@
         \end{align*}
 
     Les deux grandeurs, \(Y_{\text{Helicon}}\left(0\right)\)
-    et \(Y_{\text{Trantor}}\left(= 1\right)\) sont bien mesurables.
+    et \(Y_{\text{Trantor}}\left(1\right)\) sont bien mesurables.
     
     Est-ce que \(\Delta' = \Delta\) ? Autrement dit, notre comparaison Helicon---Trantor
     permet-elle de mesurer l'effet du traitement à Trantor ?
@@ -192,12 +192,40 @@
     Il faut à nouveau supposer que \(\mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 1\right] - \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 0\right] = 0\). Hypothèse tout aussi invérifiable que précédemment (si \(T\left(i\right) = 1\), alors \(Y_{i} = Y_{i}\left(1\right)\) et \(Y_{i}\left(0\right)\) 
     n'est pas observé et donc \( \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 1\right] = 0\) non plus).
     
+    Supposons par exemple qu'il y ait deux types de régions, des régions \(A\) pour lesquelles
+    \(Y\left(0\right) = 5\%\) et \(Y\left(1\right) = 10\%\) et des régions \(B\) pour lesquelles
+    \(Y\left(0\right) = 11\%\) et \(Y\left(1\right) = 16\%\). Pour les deux types de régions,
+    \(\boldsymbol{\Delta} = 5\%\).
+    
+    Si toutes les régions traitées sont de type \(A\) et toutes les régions non traitées sont de type \(B\),
+    \begin{align*}
+        \boldsymbol{\Delta'} & = &
+        \mathbf{E}\left[Y_{i} | T\left(i\right) = 1\right]  - \mathbf{E}\left[Y_{i} | T\left(i\right) = 0\right]\\
+         & = &
+        \mathbf{E}\left[Y_{i}\left(1\right) | i \in A\right] - \mathbf{E}\left[Y_{i}\left(0\right) | i \in B\right] \\
+        & = & 10\% - 11\% \\
+        & = & - 1\% \\
+        & \neq & \boldsymbol{\Delta}
+    \end{align*}
+    
+    Reprenons la décomposition précédente : 
+    \begin{align*}
+    \boldsymbol{\Delta'} & = & \underbrace{\boldsymbol{\Delta}}_{\text{Effet du traitement}} + \underbrace{\mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 1\right] - \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 0\right]}_{\text{Différence entre traités et non traités en l'absence de traitement}} \\
+    &=& \boldsymbol{\Delta} + \mathbf{E}\left[Y_{i}\left(0\right) | i \in A\right] - \mathbf{E}\left[Y_{i}\left(0\right) | i \in B\right] \\
+    &=& \boldsymbol{\Delta} + 5\% - 11\% \\
+    &=& \boldsymbol{\Delta} - 6\% \\
+    \end{align*}
+    
+    Notre comparaison traités --- non traités ne permet pas de retrouver le véritable effet du traitement \(\boldsymbol{\Delta}\),
+    puisque la différence entre traités et non traités en l'absence de traitement est non-nulle et inconnue.
+    
     Dans quel cas l'hypothèse  \(\mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 1\right] - \mathbf{E}\left[Y_{i}\left(0\right) | T\left(i\right) = 0\right] = 0\) n'est-elle pas aberrante ?
     
+    Si le traitement est assigné aléatoirement, il n'y a pas, en moyenne, de
+    différence entre le groupe traité et le groupe non traité (dit groupe
+    témoin).
     
-    
-    
-    
+
 \end{document}
 
     \frametitle{Point méthodologie : la différence de différence}
